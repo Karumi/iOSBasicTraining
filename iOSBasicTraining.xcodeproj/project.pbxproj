@@ -14,7 +14,7 @@
 		EBA82A381D1D1F4E0089DF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A361D1D1F4E0089DF88 /* Main.storyboard */; };
 		EBA82A3A1D1D1F4E0089DF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */; };
 		EBA82A3D1D1D1F4E0089DF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A3B1D1D1F4E0089DF88 /* LaunchScreen.storyboard */; };
-		EBA82A481D1D1F4E0089DF88 /* iOSBasicTrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A471D1D1F4E0089DF88 /* iOSBasicTrainingTests.swift */; };
+		EBA82A481D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 		EBA82A3C1D1D1F4E0089DF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBA82A3E1D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA82A431D1D1F4E0089DF88 /* iOSBasicTrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBasicTrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBA82A471D1D1F4E0089DF88 /* iOSBasicTrainingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBasicTrainingTests.swift; sourceTree = "<group>"; };
+		EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSBasicTrainingTests.swift; sourceTree = "<group>"; };
 		EBA82A491D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,7 @@
 		EBA82A461D1D1F4E0089DF88 /* iOSBasicTrainingTests */ = {
 			isa = PBXGroup;
 			children = (
-				EBA82A471D1D1F4E0089DF88 /* iOSBasicTrainingTests.swift */,
+				EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */,
 				EBA82A491D1D1F4E0089DF88 /* Info.plist */,
 			);
 			path = iOSBasicTrainingTests;
@@ -337,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA82A481D1D1F4E0089DF88 /* iOSBasicTrainingTests.swift in Sources */,
+				EBA82A481D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
