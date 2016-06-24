@@ -18,6 +18,7 @@
 		EB7945901D1D862E00115EC8 /* SuperHeroesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79458F1D1D862E00115EC8 /* SuperHeroesPresenter.swift */; };
 		EB7945921D1D863500115EC8 /* SuperHeroDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945911D1D863500115EC8 /* SuperHeroDetailPresenter.swift */; };
 		EB7945941D1D882400115EC8 /* SuperHeroesDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945931D1D882400115EC8 /* SuperHeroesDetectorViewController.swift */; };
+		EB7945961D1D891500115EC8 /* SuperHeroesDetectorServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945951D1D891500115EC8 /* SuperHeroesDetectorServiceLocator.swift */; };
 		EBA82A331D1D1F4E0089DF88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */; };
 		EBA82A351D1D1F4E0089DF88 /* SuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A341D1D1F4E0089DF88 /* SuperHeroesViewController.swift */; };
 		EBA82A381D1D1F4E0089DF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A361D1D1F4E0089DF88 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		EB79458F1D1D862E00115EC8 /* SuperHeroesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesPresenter.swift; sourceTree = "<group>"; };
 		EB7945911D1D863500115EC8 /* SuperHeroDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailPresenter.swift; sourceTree = "<group>"; };
 		EB7945931D1D882400115EC8 /* SuperHeroesDetectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetectorViewController.swift; sourceTree = "<group>"; };
+		EB7945951D1D891500115EC8 /* SuperHeroesDetectorServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetectorServiceLocator.swift; sourceTree = "<group>"; };
 		EBA82A2F1D1D1F4E0089DF88 /* iOSBasicTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBasicTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBA82A341D1D1F4E0089DF88 /* SuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				EB79457D1D1D4FCD00115EC8 /* UI */,
 				EB79458C1D1D859100115EC8 /* MVP */,
 				EB7945811D1D51AD00115EC8 /* Extensions */,
+				EB7945951D1D891500115EC8 /* SuperHeroesDetectorServiceLocator.swift */,
 				EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */,
 				EBA82A3B1D1D1F4E0089DF88 /* LaunchScreen.storyboard */,
 				EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */,
@@ -505,6 +508,7 @@
 				EB7945941D1D882400115EC8 /* SuperHeroesDetectorViewController.swift in Sources */,
 				EB7945851D1D744400115EC8 /* UIColor.swift in Sources */,
 				EBA82A621D1D3AD10089DF88 /* SuperHeroesDetector.swift in Sources */,
+				EB7945961D1D891500115EC8 /* SuperHeroesDetectorServiceLocator.swift in Sources */,
 				EBA82A331D1D1F4E0089DF88 /* AppDelegate.swift in Sources */,
 				EBA82A571D1D26180089DF88 /* SuperHero.swift in Sources */,
 				EB7945881D1D753700115EC8 /* SuperHeroTableViewCell.swift in Sources */,
