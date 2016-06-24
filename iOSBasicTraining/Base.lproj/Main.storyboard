@@ -18,8 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0O-Iy-Cae">
-                                <rect key="frame" x="39" y="285" width="271" height="30"/>
-                                <state key="normal" title="Open Super Hero Detail View Controller"/>
+                                <rect key="frame" x="39" y="285" width="296" height="30"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.40784313729999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Open Super Hero Detail View Controller">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapOpenSuperHeroDetailViewController" destination="BYZ-38-t0r" eventType="touchUpInside" id="eAp-r3-oXc"/>
                                 </connections>
@@ -67,8 +75,16 @@
                                 </accessibility>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-IS-s6P" userLabel="Capture Button">
-                                <rect key="frame" x="16" y="132" width="55" height="30"/>
-                                <state key="normal" title="Capture"/>
+                                <rect key="frame" x="16" y="132" width="105" height="30"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.40784313729999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Capture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapCaptureButton" destination="p0h-ln-PTm" eventType="touchUpInside" id="RcY-uX-LnV"/>
                                 </connections>

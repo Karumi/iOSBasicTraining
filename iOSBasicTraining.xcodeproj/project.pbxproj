@@ -10,6 +10,7 @@
 		4B01599EEDAA398935B7A381 /* Pods_iOSBasicTrainingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717EB6991E4CF84FA04D8E00 /* Pods_iOSBasicTrainingTests.framework */; };
 		646C25C373F5DC9F927CF5D1 /* Pods_iOSBasicTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A05B32F43B02AFE749853A /* Pods_iOSBasicTraining.framework */; };
 		EB7945801D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79457F1D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift */; };
+		EB7945831D1D51D600115EC8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945821D1D51D600115EC8 /* UIView.swift */; };
 		EBA82A331D1D1F4E0089DF88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */; };
 		EBA82A351D1D1F4E0089DF88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A341D1D1F4E0089DF88 /* ViewController.swift */; };
 		EBA82A381D1D1F4E0089DF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A361D1D1F4E0089DF88 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		A23F24A9F3E00ED5C6923BAF /* Pods-iOSBasicTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBasicTraining.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBasicTraining/Pods-iOSBasicTraining.release.xcconfig"; sourceTree = "<group>"; };
 		D2A05B32F43B02AFE749853A /* Pods_iOSBasicTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBasicTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB79457F1D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
+		EB7945821D1D51D600115EC8 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EBA82A2F1D1D1F4E0089DF88 /* iOSBasicTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBasicTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBA82A341D1D1F4E0089DF88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,9 +122,19 @@
 		EB79457E1D1D4FD400115EC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EBA82A341D1D1F4E0089DF88 /* ViewController.swift */,
 				EB79457F1D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift */,
+				EBA82A361D1D1F4E0089DF88 /* Main.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		EB7945811D1D51AD00115EC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB7945821D1D51D600115EC8 /* UIView.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		EBA82A261D1D1F4E0089DF88 = {
@@ -150,11 +162,10 @@
 			children = (
 				EBA82A541D1D25FA0089DF88 /* Domain */,
 				EB79457D1D1D4FCD00115EC8 /* UI */,
+				EB7945811D1D51AD00115EC8 /* Extensions */,
 				EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */,
-				EBA82A341D1D1F4E0089DF88 /* ViewController.swift */,
-				EBA82A361D1D1F4E0089DF88 /* Main.storyboard */,
-				EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */,
 				EBA82A3B1D1D1F4E0089DF88 /* LaunchScreen.storyboard */,
+				EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */,
 				EBA82A3E1D1D1F4E0089DF88 /* Info.plist */,
 			);
 			path = iOSBasicTraining;
@@ -435,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7945831D1D51D600115EC8 /* UIView.swift in Sources */,
 				EBA82A651D1D3AF30089DF88 /* SuperHeroesAPIClient.swift in Sources */,
 				EBA82A681D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift in Sources */,
 				EBA82A6A1D1D3FE10089DF88 /* SuperHeroesDetectorError.swift in Sources */,
