@@ -11,6 +11,11 @@ import UIKit
 
 class SuperHeroesDetectorServiceLocator {
 
+    static func provideRootViewController() -> UIViewController {
+        let viewController = storyBoard.instantiateInitialViewController()!
+        return viewController
+    }
+
     static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
         let viewController = provideUIViewControllerWithName("SuperHeroDetailViewController") as! SuperHeroDetailViewController
         let superHeroesDetector = provideSuperHeroesDetector()
@@ -21,7 +26,6 @@ class SuperHeroesDetectorServiceLocator {
     }
 
     private static func provideUIViewControllerWithName(name: String) -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyBoard.instantiateViewControllerWithIdentifier(name)
     }
 
@@ -29,5 +33,9 @@ class SuperHeroesDetectorServiceLocator {
         return SuperHeroesDetector(apiClient: FakeSuperHeroesAPIClient(),
                                    capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
     }
+
+    private static var storyBoard: UIStoryboard = {
+        return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    }()
 
 }

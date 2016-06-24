@@ -16,9 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        installRootViewControllerIntoWindow(window)
         configureWindow()
         configureNavigationBarStyle()
+        window?.makeKeyAndVisible()
         return true
+    }
+
+    private func installRootViewControllerIntoWindow(window: UIWindow?) {
+        let viewController = SuperHeroesDetectorServiceLocator.provideRootViewController()
+        window?.rootViewController = viewController
     }
 
     private func configureWindow() {
