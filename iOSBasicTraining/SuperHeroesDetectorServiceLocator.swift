@@ -39,7 +39,7 @@ class SuperHeroesDetectorServiceLocator {
     }
 
     private static func provideSuperHeroesAPIClient() -> SuperHeroesAPIClient {
-        return FakeSuperHeroesAPIClient()
+        return MarvelSuperHeroesAPIClient()
     }
 
     private static var storyBoard: UIStoryboard = {

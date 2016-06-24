@@ -33,7 +33,7 @@ class SuperHeroDetailViewController: SuperHeroesDetectorViewController, SuperHer
     func showSuperHero(superHero: SuperHero) {
         title = superHero.name.uppercaseString
         nameLabel.text = superHero.name
-        descriptionLabel.text = superHero.description
+        descriptionLabel.text = superHero.formalDescription
         avengersBadgeImageView.hidden = !superHero.isAvenger()
         photoImageView.sd_setImageWithURL(superHero.image)
     }

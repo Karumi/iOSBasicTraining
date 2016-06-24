@@ -4,6 +4,7 @@ target 'iOSBasicTraining' do
   pod 'Result'
   pod 'SDWebImage'
   pod 'Toast'
+  pod 'MarvelAPIClient', :git => 'https://github.com/Karumi/MarvelAPIClient.git'
 
   target 'iOSBasicTrainingTests' do
     inherit! :search_paths

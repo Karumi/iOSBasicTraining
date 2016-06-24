@@ -18,7 +18,11 @@ struct SuperHero {
 
     var formalDescription: String {
         get {
-            return "\(name) - \(description ?? "No description provided.")"
+            if let description = self.description where !description.isEmpty {
+                return "\(name) - \(description)"
+            } else {
+                return "\(name) - No description provided."
+            }
         }
     }
 

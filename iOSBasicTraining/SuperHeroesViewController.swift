@@ -30,7 +30,7 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
             return !emptyCaseView.hidden
         }
         set {
-            emptyCaseView.hidden = !showingEmptyCase
+            emptyCaseView.hidden = !newValue
         }
     }
 
@@ -39,7 +39,7 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
             return !errorCaseView.hidden
         }
         set {
-            errorCaseView.hidden = !showingErrorCase
+            errorCaseView.hidden = !newValue
         }
     }
 
@@ -57,10 +57,12 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
 
     func showLoading() {
         activityIndicatorView.startAnimating()
+        activityIndicatorView.hidden = false
     }
 
     func hideLoading() {
         activityIndicatorView.stopAnimating()
+        activityIndicatorView.hidden = true
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

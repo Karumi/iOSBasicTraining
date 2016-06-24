@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-P0-121" userLabel="Photo Image View">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-P0-121" userLabel="Photo Image View">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                                     <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
@@ -126,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ii-HC-PRt" userLabel="Photo Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ii-HC-PRt" userLabel="Photo Image View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="163"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="163" id="D7t-O3-tKo"/>
@@ -151,7 +151,7 @@
                                 </accessibility>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo4-2i-Syx" userLabel="Capture button">
-                                <rect key="frame" x="29" y="153" width="80" height="30"/>
+                                <rect key="frame" x="29" y="137" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.40784313729999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ZfC-s7-QzE"/>
@@ -174,22 +174,24 @@
                             <constraint firstItem="9Ii-HC-PRt" firstAttribute="top" secondItem="yfH-OX-19Q" secondAttribute="bottom" id="37F-PR-mBn"/>
                             <constraint firstItem="fEq-ZX-TtT" firstAttribute="top" secondItem="Vby-3e-Tfi" secondAttribute="bottom" constant="8" id="3Cz-bB-UTq"/>
                             <constraint firstItem="FGC-K4-mz5" firstAttribute="trailing" secondItem="9Ii-HC-PRt" secondAttribute="trailing" constant="-8" id="4rh-CN-IMg"/>
-                            <constraint firstItem="9Ii-HC-PRt" firstAttribute="leading" secondItem="Eo4-2i-Syx" secondAttribute="trailing" constant="-109" id="AdN-hw-H1P"/>
                             <constraint firstItem="Vby-3e-Tfi" firstAttribute="leading" secondItem="xfu-it-F8L" secondAttribute="leadingMargin" constant="8" id="DyA-J4-lrX"/>
                             <constraint firstItem="9Ii-HC-PRt" firstAttribute="width" secondItem="xfu-it-F8L" secondAttribute="width" id="EfW-bl-ayE"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fEq-ZX-TtT" secondAttribute="bottom" constant="8" id="FNk-az-nzG"/>
-                            <constraint firstItem="Eo4-2i-Syx" firstAttribute="bottom" secondItem="9Ii-HC-PRt" secondAttribute="bottom" id="JCy-qX-sA3"/>
+                            <constraint firstItem="Eo4-2i-Syx" firstAttribute="bottom" secondItem="9Ii-HC-PRt" secondAttribute="bottom" constant="-16" id="JCy-qX-sA3"/>
                             <constraint firstItem="fEq-ZX-TtT" firstAttribute="leading" secondItem="xfu-it-F8L" secondAttribute="leadingMargin" constant="8" id="KK4-Ba-QTh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fEq-ZX-TtT" secondAttribute="trailing" constant="8" id="OVw-AR-bSb"/>
                             <constraint firstItem="Eo4-2i-Syx" firstAttribute="top" secondItem="9Ii-HC-PRt" secondAttribute="bottom" constant="-44" id="TUR-Sk-idw"/>
                             <constraint firstItem="Vby-3e-Tfi" firstAttribute="top" secondItem="9Ii-HC-PRt" secondAttribute="bottom" constant="50" id="XRl-5B-Y5v"/>
+                            <constraint firstItem="Eo4-2i-Syx" firstAttribute="top" secondItem="9Ii-HC-PRt" secondAttribute="bottom" constant="-30" id="kvt-ED-iSg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vby-3e-Tfi" secondAttribute="trailing" constant="8" id="m0l-hb-cR7"/>
                             <constraint firstItem="9Ii-HC-PRt" firstAttribute="centerX" secondItem="xfu-it-F8L" secondAttribute="centerX" id="oJw-I4-bVM"/>
                             <constraint firstItem="FGC-K4-mz5" firstAttribute="bottom" secondItem="9Ii-HC-PRt" secondAttribute="bottom" id="rYm-Bg-xcn"/>
+                            <constraint firstItem="9Ii-HC-PRt" firstAttribute="leading" secondItem="Eo4-2i-Syx" secondAttribute="trailing" constant="-109" id="zfc-Fd-iV5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="TUR-Sk-idw"/>
+                                <exclude reference="kvt-ED-iSg"/>
                             </mask>
                         </variation>
                     </view>

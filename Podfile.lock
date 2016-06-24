@@ -1,23 +1,46 @@
 PODS:
+  - BothamNetworking (1.1.0):
+    - Result
+    - SwiftyJSON
+  - CryptoSwift (0.5.1)
+  - MarvelAPIClient (0.0.1):
+    - BothamNetworking
+    - CryptoSwift
+    - SwiftyJSON
   - Nimble (4.1.0)
-  - Result (2.1.0)
+  - Result (2.1.1)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SwiftyJSON (2.3.2)
   - Toast (3.0)
 
 DEPENDENCIES:
+  - MarvelAPIClient (from `https://github.com/Karumi/MarvelAPIClient.git`)
   - Nimble
   - Result
   - SDWebImage
   - Toast
 
+EXTERNAL SOURCES:
+  MarvelAPIClient:
+    :git: https://github.com/Karumi/MarvelAPIClient.git
+
+CHECKOUT OPTIONS:
+  MarvelAPIClient:
+    :commit: b33c46b9e16756baa50661bc3e90847b73d04027
+    :git: https://github.com/Karumi/MarvelAPIClient.git
+
 SPEC CHECKSUMS:
+  BothamNetworking: 3396c9b18938ddaa47c44a8c3abf47db1fc7e42e
+  CryptoSwift: df42dda18baf6c76347a94e227dbcc0a341304bd
+  MarvelAPIClient: 95c5af8072347c2c68d93c11037ceb35ea6c4868
   Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
-  Result: d7f09a21f10428bb8d23a74c48999b591692c559
+  Result: 822c879f145943320cc80a9a8372378e3d699fe4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: f78f0302219ea48fdbf573e178ca3159330358c9
+PODFILE CHECKSUM: 7d8ec386771b7971e784061152ddf80fe32bdf53
 
 COCOAPODS: 1.0.1

@@ -65,6 +65,7 @@ As super heroes are now super villans the Cental City Police Departament also re
     * Change your [Model View Presenter][mvp] implementation to use [Botham UI][bothamUI]
     * Add a pull to refresh mechanism.
     * Add an infinite load mechanism and implement pagination.
+    * Improve the UX related to the capture a super hero process to avoid the blink effect when a super hero is captured. How can you do this?
 
 License
 -------

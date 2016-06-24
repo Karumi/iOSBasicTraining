@@ -38,6 +38,7 @@ class SuperHeroesPresenter: Presenter {
     }
 
     private func showSuperHeroes(superHeroes: [SuperHero]) {
+        view?.hideLoading()
         view?.superHeroes = superHeroes
         view?.showingEmptyCase = superHeroes.isEmpty
         view?.showingErrorCase = false
@@ -47,7 +48,7 @@ class SuperHeroesPresenter: Presenter {
         guard let view = view else {
             return
         }
-
+        view.hideLoading()
         view.showingEmptyCase = false
         switch error {
         case .ConnectionError:
