@@ -1,5 +1,5 @@
 //
-//  MarvelAPIClient.swift
+//  SuperHeroesAPIClient.swift
 //  iOSBasicTraining
 //
 //  Created by Pedro Vicente Gomez on 24/06/16.
@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Result
+
+protocol SuperHeroesAPIClient {
+
+    func getAllSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void)
+
+}

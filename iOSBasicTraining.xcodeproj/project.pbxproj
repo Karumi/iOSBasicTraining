@@ -14,11 +14,14 @@
 		EBA82A381D1D1F4E0089DF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A361D1D1F4E0089DF88 /* Main.storyboard */; };
 		EBA82A3A1D1D1F4E0089DF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */; };
 		EBA82A3D1D1D1F4E0089DF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A3B1D1D1F4E0089DF88 /* LaunchScreen.storyboard */; };
-		EBA82A531D1D24420089DF88 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A521D1D24420089DF88 /* README.md */; };
 		EBA82A571D1D26180089DF88 /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A561D1D26180089DF88 /* SuperHero.swift */; };
 		EBA82A591D1D26920089DF88 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A581D1D26920089DF88 /* Comic.swift */; };
 		EBA82A5C1D1D26DB0089DF88 /* SuperHeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */; };
 		EBA82A601D1D27E90089DF88 /* SuperHeroesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */; };
+		EBA82A621D1D3AD10089DF88 /* SuperHeroesDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A611D1D3AD10089DF88 /* SuperHeroesDetector.swift */; };
+		EBA82A651D1D3AF30089DF88 /* SuperHeroesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A641D1D3AF30089DF88 /* SuperHeroesAPIClient.swift */; };
+		EBA82A681D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */; };
+		EBA82A6A1D1D3FE10089DF88 /* SuperHeroesDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +50,15 @@
 		EBA82A3E1D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA82A431D1D1F4E0089DF88 /* iOSBasicTrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBasicTrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA82A491D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBA82A521D1D24420089DF88 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EBA82A561D1D26180089DF88 /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
 		EBA82A581D1D26920089DF88 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		EBA82A5A1D1D26DB0089DF88 /* iOSBasicTrainingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSBasicTrainingTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroTests.swift; sourceTree = "<group>"; };
 		EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesBuilder.swift; sourceTree = "<group>"; };
+		EBA82A611D1D3AD10089DF88 /* SuperHeroesDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetector.swift; sourceTree = "<group>"; };
+		EBA82A641D1D3AF30089DF88 /* SuperHeroesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesAPIClient.swift; sourceTree = "<group>"; };
+		EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedSuperHeroesStorage.swift; sourceTree = "<group>"; };
+		EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetectorError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,6 @@
 				EBA82A301D1D1F4E0089DF88 /* Products */,
 				8FDF82A03E65C74CB335D930 /* Pods */,
 				1444FB9780EB0E8EE935A1EA /* Frameworks */,
-				EBA82A521D1D24420089DF88 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,8 +149,12 @@
 		EBA82A541D1D25FA0089DF88 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EBA82A661D1D3B5B0089DF88 /* Storage */,
+				EBA82A631D1D3ADD0089DF88 /* API Client */,
 				EBA82A561D1D26180089DF88 /* SuperHero.swift */,
 				EBA82A581D1D26920089DF88 /* Comic.swift */,
+				EBA82A611D1D3AD10089DF88 /* SuperHeroesDetector.swift */,
+				EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -164,6 +173,22 @@
 				EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */,
 			);
 			name = Builders;
+			sourceTree = "<group>";
+		};
+		EBA82A631D1D3ADD0089DF88 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A641D1D3AF30089DF88 /* SuperHeroesAPIClient.swift */,
+			);
+			name = "API Client";
+			sourceTree = "<group>";
+		};
+		EBA82A661D1D3B5B0089DF88 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */,
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,9 +391,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA82A531D1D24420089DF88 /* README.md in Sources */,
+				EBA82A651D1D3AF30089DF88 /* SuperHeroesAPIClient.swift in Sources */,
+				EBA82A681D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift in Sources */,
+				EBA82A6A1D1D3FE10089DF88 /* SuperHeroesDetectorError.swift in Sources */,
 				EBA82A351D1D1F4E0089DF88 /* ViewController.swift in Sources */,
 				EBA82A591D1D26920089DF88 /* Comic.swift in Sources */,
+				EBA82A621D1D3AD10089DF88 /* SuperHeroesDetector.swift in Sources */,
 				EBA82A331D1D1F4E0089DF88 /* AppDelegate.swift in Sources */,
 				EBA82A571D1D26180089DF88 /* SuperHero.swift in Sources */,
 			);
