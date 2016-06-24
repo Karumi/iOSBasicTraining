@@ -17,6 +17,8 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
+    var superHero: SuperHero!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let superHero = SuperHero(id: "3",

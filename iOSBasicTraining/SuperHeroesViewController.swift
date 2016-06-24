@@ -44,6 +44,14 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let superHero = superHeroes[indexPath.row]
+        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let viewController = storyBoard.instantiateViewControllerWithIdentifier("SuperHeroDetailViewController") as! SuperHeroDetailViewController
+        viewController.superHero = superHero
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
     private func loadSuperHeroes() {
         activityIndicatorView.startAnimating()
         superHeroesDetector.getSuperHeroes { result in
