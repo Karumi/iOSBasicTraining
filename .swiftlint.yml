@@ -1,0 +1,21 @@
+disabled_rules: # rule identifiers to exclude from running
+  - force_cast
+  - line_length
+  - function_parameter_count
+
+excluded: # paths to ignore during linting. overridden by `included`.
+  - Carthage
+  - Pods
+
+variable_name:
+  min_length:
+    warning: 1
+
+trailing_whitespace: error
+control_statement: error
+colon: error
+opening_brace: error
+return_arrow_whitespace: error
+trailing_semicolon: error
+statement_position: error
+legacy_constructor: error
