@@ -14,7 +14,11 @@
 		EBA82A381D1D1F4E0089DF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A361D1D1F4E0089DF88 /* Main.storyboard */; };
 		EBA82A3A1D1D1F4E0089DF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A391D1D1F4E0089DF88 /* Assets.xcassets */; };
 		EBA82A3D1D1D1F4E0089DF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA82A3B1D1D1F4E0089DF88 /* LaunchScreen.storyboard */; };
-		EBA82A481D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */; };
+		EBA82A531D1D24420089DF88 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A521D1D24420089DF88 /* README.md */; };
+		EBA82A571D1D26180089DF88 /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A561D1D26180089DF88 /* SuperHero.swift */; };
+		EBA82A591D1D26920089DF88 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A581D1D26920089DF88 /* Comic.swift */; };
+		EBA82A5C1D1D26DB0089DF88 /* SuperHeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */; };
+		EBA82A601D1D27E90089DF88 /* SuperHeroesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +46,13 @@
 		EBA82A3C1D1D1F4E0089DF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBA82A3E1D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA82A431D1D1F4E0089DF88 /* iOSBasicTrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBasicTrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSBasicTrainingTests.swift; sourceTree = "<group>"; };
 		EBA82A491D1D1F4E0089DF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA82A521D1D24420089DF88 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EBA82A561D1D26180089DF88 /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
+		EBA82A581D1D26920089DF88 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		EBA82A5A1D1D26DB0089DF88 /* iOSBasicTrainingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSBasicTrainingTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroTests.swift; sourceTree = "<group>"; };
+		EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,7 @@
 				EBA82A301D1D1F4E0089DF88 /* Products */,
 				8FDF82A03E65C74CB335D930 /* Pods */,
 				1444FB9780EB0E8EE935A1EA /* Frameworks */,
+				EBA82A521D1D24420089DF88 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +119,7 @@
 		EBA82A311D1D1F4E0089DF88 /* iOSBasicTraining */ = {
 			isa = PBXGroup;
 			children = (
+				EBA82A541D1D25FA0089DF88 /* Domain */,
 				EBA82A321D1D1F4E0089DF88 /* AppDelegate.swift */,
 				EBA82A341D1D1F4E0089DF88 /* ViewController.swift */,
 				EBA82A361D1D1F4E0089DF88 /* Main.storyboard */,
@@ -122,10 +133,37 @@
 		EBA82A461D1D1F4E0089DF88 /* iOSBasicTrainingTests */ = {
 			isa = PBXGroup;
 			children = (
-				EBA82A471D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift */,
+				EBA82A5D1D1D26E50089DF88 /* Domain */,
+				EBA82A5E1D1D27DC0089DF88 /* Builders */,
 				EBA82A491D1D1F4E0089DF88 /* Info.plist */,
+				EBA82A5A1D1D26DB0089DF88 /* iOSBasicTrainingTests-Bridging-Header.h */,
 			);
 			path = iOSBasicTrainingTests;
+			sourceTree = "<group>";
+		};
+		EBA82A541D1D25FA0089DF88 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A561D1D26180089DF88 /* SuperHero.swift */,
+				EBA82A581D1D26920089DF88 /* Comic.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		EBA82A5D1D1D26E50089DF88 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		EBA82A5E1D1D27DC0089DF88 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A5F1D1D27E90089DF88 /* SuperHeroesBuilder.swift */,
+			);
+			name = Builders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +366,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA82A531D1D24420089DF88 /* README.md in Sources */,
 				EBA82A351D1D1F4E0089DF88 /* ViewController.swift in Sources */,
+				EBA82A591D1D26920089DF88 /* Comic.swift in Sources */,
 				EBA82A331D1D1F4E0089DF88 /* AppDelegate.swift in Sources */,
+				EBA82A571D1D26180089DF88 /* SuperHero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA82A481D1D1F4E0089DF88 /* IOSBasicTrainingTests.swift in Sources */,
+				EBA82A5C1D1D26DB0089DF88 /* SuperHeroTests.swift in Sources */,
+				EBA82A601D1D27E90089DF88 /* SuperHeroesBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,10 +525,13 @@
 			baseConfigurationReference = 6A04285918E4D5E401E2076E /* Pods-iOSBasicTrainingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSBasicTrainingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.iOSBasicTrainingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSBasicTrainingTests/iOSBasicTrainingTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSBasicTraining.app/iOSBasicTraining";
 			};
 			name = Debug;
@@ -496,10 +541,12 @@
 			baseConfigurationReference = 38CDB279D2411D6931C099DA /* Pods-iOSBasicTrainingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSBasicTrainingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.iOSBasicTrainingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSBasicTrainingTests/iOSBasicTrainingTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSBasicTraining.app/iOSBasicTraining";
 			};
 			name = Release;
