@@ -37,7 +37,7 @@ As super heroes are now super villans the Cental City Police Departament also re
 	* Implement the Super Heroes UIViewController using a table view.
 	* Show some mocked data in the already implemented Super Heroes screen.
 	* Connect the super heroes screen with the system you wrote during the task 1.
-	* The tests needed to cover this new funtionality will be covered in other [exercise][kataSuperHeroes].
+	* The tests needed to cover this new funtionality will be covered during another [exercise][kataSuperHeroes].
 	* **Bonus:**
 		* Replace your UITableView widget with a UICollectionView.
 		* Change the Super Heroes screen to show 3 columns if the device is an iPad and 1 column by default.
@@ -51,7 +51,7 @@ As super heroes are now super villans the Cental City Police Departament also re
 
 * **Task 5:**
 	* Connect your already implemented domain with the remote API using an already implemented [Marvel API Client][marvelApiClient] following the repository pattern.
-	* The tests needed to cover this new funtionality will be covered in other [exercise][kataTodoAPIClient].
+	* The tests needed to cover this new funtionality will be covered during aother [exercise][kataTodoAPIClient].
 	* **Bonus:**
 		* Using Alamofire implement your own Marvel API Client and replace the old one with this one.
 		* Write some integration tests using HTTP stubbing with [Nocilla][nocilla] 
