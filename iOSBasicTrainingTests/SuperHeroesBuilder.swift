@@ -14,8 +14,9 @@ class SuperHeroesBuilder {
     static func with(id id: String = "1",
                      name: String = "The Flash",
                      description: String? = nil,
+                     image: NSURL? = nil,
                      comics: [Comic] = [Comic]()) -> SuperHero {
-        return SuperHero(id: id, name: name, description: description, comics: comics)
+        return SuperHero(id: id, name: name, description: description, image: image, comics: comics)
     }
 
 }

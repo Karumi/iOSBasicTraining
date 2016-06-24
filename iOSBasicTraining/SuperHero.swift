@@ -13,6 +13,7 @@ struct SuperHero {
     let id: String
     let name: String
     let description: String?
+    let image: NSURL?
     let comics: [Comic]
 
     var formalDescription: String {
