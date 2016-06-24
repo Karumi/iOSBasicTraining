@@ -3,7 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ManifoldCF-Regular.otf">
+            <string>ManifoldCF-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Super Heroes View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -13,29 +19,96 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="FR3-TB-mHm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0O-Iy-Cae">
-                                <rect key="frame" x="39" y="285" width="296" height="30"/>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.40784313729999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Open Super Hero Detail View Controller">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="didTapOpenSuperHeroDetailButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="feS-w7-AMt"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CEA-ZV-Bxi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuperHeroTableViewCell" rowHeight="163" id="WmU-Sm-obn" customClass="SuperHeroTableViewCell" customModule="iOSBasicTraining" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="163"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WmU-Sm-obn" id="gz0-8p-LEZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-P0-121" userLabel="Photo Image View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                                    <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Avengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAK-4x-5nS">
+                                                    <rect key="frame" x="8" y="134" width="98" height="19"/>
+                                                    <fontDescription key="fontDescription" name="ManifoldCF-Regular" family="Manifold CF" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-qb-RBU" userLabel="Avengers Badge Image VIew">
+                                                    <rect key="frame" x="520" y="75" width="64" height="72"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="zAK-4x-5nS" secondAttribute="leading" id="D4W-y2-STM"/>
+                                                <constraint firstItem="aZa-P0-121" firstAttribute="height" secondItem="gz0-8p-LEZ" secondAttribute="height" id="PcL-Dr-rhW"/>
+                                                <constraint firstItem="aZa-P0-121" firstAttribute="width" secondItem="gz0-8p-LEZ" secondAttribute="width" id="QDb-Ai-Mnb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Q9Y-qb-RBU" secondAttribute="bottom" constant="8" id="SlF-ML-LVP"/>
+                                                <constraint firstItem="aZa-P0-121" firstAttribute="centerX" secondItem="gz0-8p-LEZ" secondAttribute="centerX" id="gBp-rH-S4J"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zAK-4x-5nS" secondAttribute="bottom" constant="2" id="nPH-8Z-C7o"/>
+                                                <constraint firstItem="aZa-P0-121" firstAttribute="centerY" secondItem="gz0-8p-LEZ" secondAttribute="centerY" id="o0O-ne-Hgp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Q9Y-qb-RBU" secondAttribute="trailing" constant="8" id="rnM-aS-Reb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avengersBadgeImageView" destination="Q9Y-qb-RBU" id="2Ed-0G-NMn"/>
+                                            <outlet property="nameLabel" destination="zAK-4x-5nS" id="DQE-hF-7xy"/>
+                                            <outlet property="photoImageView" destination="aZa-P0-121" id="Trt-Dz-7f5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¯\_(ツ)_/¯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-zO-07n">
+                                <rect key="frame" x="265" y="290" width="70.5" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" label="¯\_(ツ)_/¯"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ups something went wrong!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49W-4k-KLy" userLabel="Error Case View">
+                                <rect key="frame" x="192" y="290.5" width="214.5" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" label="¯\_(ツ)_/¯"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="R5f-j5-5Sc" userLabel="Activity Indicator">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CEA-ZV-Bxi" firstAttribute="height" secondItem="FR3-TB-mHm" secondAttribute="height" id="48h-1a-Kaa"/>
+                            <constraint firstItem="49W-4k-KLy" firstAttribute="centerY" secondItem="FR3-TB-mHm" secondAttribute="centerY" id="7jY-e9-rkV"/>
+                            <constraint firstItem="CEA-ZV-Bxi" firstAttribute="width" secondItem="FR3-TB-mHm" secondAttribute="width" id="8Qc-nB-SWE"/>
+                            <constraint firstItem="VNy-zO-07n" firstAttribute="centerX" secondItem="FR3-TB-mHm" secondAttribute="centerX" id="8k0-Xp-F3M"/>
+                            <constraint firstItem="49W-4k-KLy" firstAttribute="centerX" secondItem="FR3-TB-mHm" secondAttribute="centerX" id="KZi-ER-bwS"/>
+                            <constraint firstItem="VNy-zO-07n" firstAttribute="centerY" secondItem="FR3-TB-mHm" secondAttribute="centerY" id="O3A-8N-JDT"/>
+                            <constraint firstItem="R5f-j5-5Sc" firstAttribute="centerY" secondItem="FR3-TB-mHm" secondAttribute="centerY" id="bpj-0Q-NIw"/>
+                            <constraint firstItem="R5f-j5-5Sc" firstAttribute="centerX" secondItem="FR3-TB-mHm" secondAttribute="centerX" id="cQ3-es-oFc"/>
+                            <constraint firstItem="CEA-ZV-Bxi" firstAttribute="centerX" secondItem="FR3-TB-mHm" secondAttribute="centerX" id="u4R-gA-ZSU"/>
+                            <constraint firstItem="CEA-ZV-Bxi" firstAttribute="centerY" secondItem="FR3-TB-mHm" secondAttribute="centerY" id="ukI-IH-OOd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zc3-zk-OQX"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="R5f-j5-5Sc" id="WfT-Fr-Bjc"/>
+                        <outlet property="emptyCaseView" destination="VNy-zO-07n" id="Ano-6l-sZd"/>
+                        <outlet property="errorCaseView" destination="49W-4k-KLy" id="44H-yX-V2p"/>
+                        <outlet property="tableView" destination="CEA-ZV-Bxi" id="yCE-hu-eJE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

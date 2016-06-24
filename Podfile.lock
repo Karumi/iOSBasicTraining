@@ -4,17 +4,20 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - Toast (3.0)
 
 DEPENDENCIES:
   - Nimble
   - Result
   - SDWebImage
+  - Toast
 
 SPEC CHECKSUMS:
   Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   Result: d7f09a21f10428bb8d23a74c48999b591692c559
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: 20c6d652fe267f74f4c3b034f309c9e441b48c7b
+PODFILE CHECKSUM: f78f0302219ea48fdbf573e178ca3159330358c9
 
 COCOAPODS: 1.0.1

@@ -3,6 +3,7 @@ target 'iOSBasicTraining' do
 
   pod 'Result'
   pod 'SDWebImage'
+  pod 'Toast'
 
   target 'iOSBasicTrainingTests' do
     inherit! :search_paths
