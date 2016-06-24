@@ -30,6 +30,7 @@ As super heroes are now super villans the Cental City Police Departament also re
 
 * **Task 2:**
  	* Implement the Super Hero Detail UIViewController using the XCode interface builder and show some mocked data there.
+    * Add a button to the first view controller to connect this view controller with the detail view controller and implement this navigation.
  	* **Bonus:**
  		* Read the [KIF Framework][kif] documentation and sample project.
  		* Using the iOS simulator review the accessibility labels configured.
