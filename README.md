@@ -3,22 +3,24 @@
 
 Code associated to the first level of the Karumi iOS Training.
 
-##Avengers detector
+##Earth 11 Avengers Detector
 
-In hearth 11 the world of super heroes has completely changed. Super heroes are super villans and viceversa. In this earth the Avengers team is now an evil coporation and is not composed by the usual super heroes. The new members of this organization are unknown.
+In Earth 11 the world of super heroes has completely changed. Super heroes are super villans and viceversa. In this earth the Avengers team is now an evil coporation and is not composed by the usual super heroes. The new members of this organization are unknown.
 
-After collaborating with The Flash from Earth 1 Central City Police Departament has noticed that the new Avengers Team members are the one containing the number four in the super hero id. **Your mission, if you decide to accept it, is to develop an iOS application to show a list of super heroes obtained from a remote API and show a list of super heroes with the Avengers badge if the super hero es part of the evil Avengers Team.**
+After collaborating with [The Flash from Earth 1][flash] Central City Police Departament has noticed that the new Avengers Team members are the one containing the number four in the super hero id. **Your mission, if you decide to accept it, is to develop an iOS application to show a list of super heroes obtained from a remote API showing the Avengers badge if the super hero is part of the Earth 11 evil Avengers Team.**
+
+As super heroes are now super villans the Cental City Police Departament also requested us a feature to be able to mark a super hero as captured in the detailed screen. Once the super hero has been captured the system will not show information related to the super hero anymore.
+
+##Application mockups
 
 ![ApplicationScreencast][applicationScreencast]
-
-As super heroes are now super villans the Cental City Police Departament requested us a feature to be able to mark a super hero as captured in the detailed screen. Once the super hero has been captured the system will not show information related to the super hero anymore.
 
 ##Tasks
 
 * **Task 1:**
-    * Create an empty iOS project.
-    * Configure CocoaPods.
-    * Implement part of the domain model abstracting the data sources.
+    * Create an empty iOS project from XCode.
+    * Configure [CocoaPods][cocoapods].
+    * Implement part of the domain model abstracting the data source.
     * Write the unit tests needed to cover this functionality. You can use [Nimble][nimble] to implement your matchers.
     * **Bonus:**
     	* Configure Travis-CI as a continous integration system.
@@ -34,9 +36,11 @@ As super heroes are now super villans the Cental City Police Departament request
 	* Implement the Super Heroes UIViewController using a table view.
 	* Show some mocked data in the already implemented Super Heroes screen.
 	* Connect the super heroes screen with the system you wrote during the task 1.
+	* The tests needed to cover this new funtionality will be covered in other [exercise][kataSuperHeroes].
 	* **Bonus:**
 		* Replace your UITableView widget with a UICollectionView.
 		* Change the Super Heroes screen to show 3 columns if the device is an iPad and 1 column by default.
+		* Write some UI Tests using the UI Test recorder.
 
 * **Task 4:**
 	* Refactor the already implemented view controllers to use [Model View Presenter][mvp] to develop the application presentation layer.
@@ -45,9 +49,11 @@ As super heroes are now super villans the Cental City Police Departament request
 		* Review other UI patterns like [Model View ViewModel][mvvm] and reimplement the presentation layer.
 
 * **Task 5:**
-	* Connect your already implemented domain with the remote API using an already implemented [Marvel API Client][marvelApiClient].
+	* Connect your already implemented domain with the remote API using an already implemented [Marvel API Client][marvelApiClient] following the repository pattern.
+	* The tests needed to cover this new funtionality will be covered in other [exercise][kataTodoAPIClient].
 	* **Bonus:**
 		* Using Alamofire implement your own Marvel API Client and replace the old one with this one.
+		* Write some integration tests using HTTP stubbing with [Nocilla][nocilla] 
 		* Add persistence to the application.
 
 License
@@ -78,3 +84,7 @@ limitations under the License.
 [mvp]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
 [marvelApiClient]: https://github.com/Karumi/MarvelApiClient
 [mvvm]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
+[flash]: https://en.wikipedia.org/wiki/Flash_(comics)
+[kataSuperHeroes]: https://github.com/Karumi/KataSuperHeroesIOS/
+[nocilla]: https://github.com/luisobo/Nocilla
+[kataTodoAPIClient]: https://github.com/Karumi/KataTODOApiClientIOS
