@@ -25,7 +25,8 @@ As super heroes are now super villans the Cental City Police Departament also re
     * **Bonus:**
     	* Configure Travis-CI as a continous integration system.
     	* Configure Swiftlint as checkstyle tool.
-    	* Change the splash screen to use the app logo.
+    	* Change application logo.
+    	* Change the splash screen xib to use the app logo.
 
 * **Task 2:**
  	* Implement the Super Hero Detail UIViewController using the XCode interface builder and show some mocked data there.
