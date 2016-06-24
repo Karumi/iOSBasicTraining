@@ -8,17 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SuperHeroesViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    @IBAction func didTapOpenSuperHeroDetailViewController() {
+    @IBAction func didTapOpenSuperHeroDetailButton() {
         let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let viewController = storyBoard.instantiateViewControllerWithIdentifier("SuperHeroDetailViewController")
         navigationController?.pushViewController(viewController, animated: true)
     }
-
 
 }

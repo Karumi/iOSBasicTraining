@@ -8,7 +8,7 @@
         <!--Super Heroes View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Super Heroes View Controller" customClass="ViewController" customModule="iOSBasicTraining" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Super Heroes View Controller" customClass="SuperHeroesViewController" customModule="iOSBasicTraining" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,7 +29,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapOpenSuperHeroDetailViewController" destination="BYZ-38-t0r" eventType="touchUpInside" id="eAp-r3-oXc"/>
+                                    <action selector="didTapOpenSuperHeroDetailButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="feS-w7-AMt"/>
                                 </connections>
                             </button>
                         </subviews>
