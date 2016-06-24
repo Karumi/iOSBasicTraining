@@ -27,7 +27,9 @@ class CapturedSuperHeroesStorage {
     }
 
     func clear() {
-        userDefaults.removeSuiteNamed(CapturedSuperHeroesStorage.storageName)
+        for superHeroId in userDefaults.dictionaryRepresentation().keys {
+            userDefaults.removeObjectForKey(superHeroId)
+        }
     }
 
 }

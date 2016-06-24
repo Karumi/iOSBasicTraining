@@ -22,6 +22,9 @@
 		EBA82A651D1D3AF30089DF88 /* SuperHeroesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A641D1D3AF30089DF88 /* SuperHeroesAPIClient.swift */; };
 		EBA82A681D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */; };
 		EBA82A6A1D1D3FE10089DF88 /* SuperHeroesDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */; };
+		EBA82A6C1D1D422A0089DF88 /* SuperHeroesDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A6B1D1D422A0089DF88 /* SuperHeroesDetectorTests.swift */; };
+		EBA82A6F1D1D42DB0089DF88 /* MockSuperHeroesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A6E1D1D42DB0089DF88 /* MockSuperHeroesAPIClient.swift */; };
+		EBA82A721D1D44790089DF88 /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA82A711D1D44790089DF88 /* SuperHero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		EBA82A641D1D3AF30089DF88 /* SuperHeroesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesAPIClient.swift; sourceTree = "<group>"; };
 		EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedSuperHeroesStorage.swift; sourceTree = "<group>"; };
 		EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetectorError.swift; sourceTree = "<group>"; };
+		EBA82A6B1D1D422A0089DF88 /* SuperHeroesDetectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesDetectorTests.swift; sourceTree = "<group>"; };
+		EBA82A6E1D1D42DB0089DF88 /* MockSuperHeroesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSuperHeroesAPIClient.swift; sourceTree = "<group>"; };
+		EBA82A711D1D44790089DF88 /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				EBA82A5D1D1D26E50089DF88 /* Domain */,
+				EBA82A701D1D446F0089DF88 /* Extensions */,
+				EBA82A6D1D1D42D00089DF88 /* Test Doubles */,
 				EBA82A5E1D1D27DC0089DF88 /* Builders */,
 				EBA82A491D1D1F4E0089DF88 /* Info.plist */,
 				EBA82A5A1D1D26DB0089DF88 /* iOSBasicTrainingTests-Bridging-Header.h */,
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				EBA82A5B1D1D26DB0089DF88 /* SuperHeroTests.swift */,
+				EBA82A6B1D1D422A0089DF88 /* SuperHeroesDetectorTests.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -189,6 +198,22 @@
 				EBA82A671D1D3B670089DF88 /* CapturedSuperHeroesStorage.swift */,
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		EBA82A6D1D1D42D00089DF88 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A6E1D1D42DB0089DF88 /* MockSuperHeroesAPIClient.swift */,
+			);
+			name = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		EBA82A701D1D446F0089DF88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EBA82A711D1D44790089DF88 /* SuperHero.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +431,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA82A721D1D44790089DF88 /* SuperHero.swift in Sources */,
+				EBA82A6C1D1D422A0089DF88 /* SuperHeroesDetectorTests.swift in Sources */,
+				EBA82A6F1D1D42DB0089DF88 /* MockSuperHeroesAPIClient.swift in Sources */,
 				EBA82A5C1D1D26DB0089DF88 /* SuperHeroTests.swift in Sources */,
 				EBA82A601D1D27E90089DF88 /* SuperHeroesBuilder.swift in Sources */,
 			);

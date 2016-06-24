@@ -56,6 +56,7 @@ As super heroes are now super villans the Cental City Police Departament also re
 		* Using Alamofire implement your own Marvel API Client and replace the old one with this one.
 		* Write some integration tests using HTTP stubbing with [Nocilla][nocilla] 
 		* Add persistence to the application.
+		* Replace the usage of completion handlers with promisses or observables.
 
 License
 -------
