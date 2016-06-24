@@ -48,7 +48,9 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
         let superHero = superHeroes[indexPath.row]
         let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let viewController = storyBoard.instantiateViewControllerWithIdentifier("SuperHeroDetailViewController") as! SuperHeroDetailViewController
-        viewController.superHero = superHero
+        viewController.presenter = SuperHeroDetailPresenter(view: viewController,
+                                                            superHeroesDetector: superHeroesDetector,
+                                                            superHero: superHero)
         navigationController?.pushViewController(viewController, animated: true)
     }
 

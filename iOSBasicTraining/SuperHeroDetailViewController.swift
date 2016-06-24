@@ -11,7 +11,7 @@ import UIKit
 import SDWebImage
 import Result
 
-class SuperHeroDetailViewController: UIViewController {
+class SuperHeroDetailViewController: SuperHeroesDetectorViewController, SuperHeroDetailView {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,34 +19,27 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
     @IBOutlet weak var captureButton: UIButton!
 
-    var superHero: SuperHero!
-    private let superHeroesDetector = SuperHeroesDetector(
-        apiClient: FakeSuperHeroesAPIClient(),
-        capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
+    var presenter: SuperHeroDetailPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        showSuperHero()
+        presenter.viewDidLoad()
     }
 
     @IBAction func didTapCaptureButton() {
-        let id = superHero.id
-        let result = superHeroesDetector.captureSuperHero(id)
-        switch result {
-        case .Success(_):
-            captureButton.hidden = true
-            view.makeToast("Evil super hero captured!")
-            break
-        default:
-            view.makeToast("Ups, Something went wrong!")
-        }
+        presenter.didTapCaptureButton()
     }
 
-    private func showSuperHero() {
+    func showSuperHero(superHero: SuperHero) {
         title = superHero.name.uppercaseString
         nameLabel.text = superHero.name
         descriptionLabel.text = superHero.description
         avengersBadgeImageView.hidden = !superHero.isAvenger()
         photoImageView.sd_setImageWithURL(superHero.image)
     }
+
+    func hideCaptureButton() {
+        captureButton.hidden = true
+    }
+
 }
