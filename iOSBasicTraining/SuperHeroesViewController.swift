@@ -9,17 +9,39 @@
 import UIKit
 import Toast
 
-class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SuperHeroesViewController: SuperHeroesDetectorViewController,
+                        UITableViewDataSource, UITableViewDelegate, SuperHeroesView {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UIView!
     @IBOutlet weak var errorCaseView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
-    private let superHeroesDetector = SuperHeroesDetector(
-        apiClient: FakeSuperHeroesAPIClient(),
-        capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
-    private var superHeroes = [SuperHero]()
+    var presenter: SuperHeroesPresenter!
+
+    var superHeroes = [SuperHero]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
+    var showingEmptyCase: Bool {
+        get {
+            return !emptyCaseView.hidden
+        }
+        set {
+            emptyCaseView.hidden = !showingEmptyCase
+        }
+    }
+
+    var showingErrorCase: Bool {
+        get {
+            return !errorCaseView.hidden
+        }
+        set {
+            errorCaseView.hidden = !showingErrorCase
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +52,15 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        loadSuperHeroes()
+        presenter.viewWillAppear()
+    }
+
+    func showLoading() {
+        activityIndicatorView.startAnimating()
+    }
+
+    func hideLoading() {
+        activityIndicatorView.stopAnimating()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,46 +80,6 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    private func loadSuperHeroes() {
-        activityIndicatorView.startAnimating()
-        superHeroesDetector.getSuperHeroes { result in
-            self.activityIndicatorView.stopAnimating()
-            switch result {
-            case .Success(let superHeroes):
-                self.showSuperHeroes(superHeroes)
-                break
-            case .Failure(let error):
-                self.showError(error)
-                break
-            }
-        }
-    }
-
-    private func showSuperHeroes(superHeroes: [SuperHero]) {
-        self.superHeroes = superHeroes
-        tableView.reloadData()
-        emptyCaseView.hidden = !superHeroes.isEmpty
-        errorCaseView.hidden = true
-    }
-
-    private func showError(error: SuperHeroesDetectorError) {
-        switch error {
-        case .ConnectionError:
-            emptyCaseView.hidden = true
-            errorCaseView.hidden = !superHeroes.isEmpty
-            if superHeroes.isEmpty {
-                view.makeToast("Ups, there is no connection!")
-            }
-            break
-        default:
-            if superHeroes.isEmpty {
-                errorCaseView.hidden = true
-            } else {
-                view.makeToast("Ups, unknown error detected!")
-            }
-            fatalError()
-        }
-    }
 
     private func configureNavigationBarTitle() {
         title = "Super Heroes Detector"

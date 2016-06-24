@@ -60,6 +60,12 @@ As super heroes are now super villans the Cental City Police Departament also re
 		* Add persistence to the application.
 		* Replace the usage of completion handlers with promisses or observables.
 
+* **Extra tasks:**
+
+    * Change your [Model View Presenter][mvp] implementation to use [Botham UI][bothamUI]
+    * Add a pull to refresh mechanism.
+    * Add an infinite load mechanism and implement pagination.
+
 License
 -------
 
@@ -92,3 +98,4 @@ limitations under the License.
 [kataSuperHeroes]: https://github.com/Karumi/KataSuperHeroesIOS/
 [nocilla]: https://github.com/luisobo/Nocilla
 [kataTodoAPIClient]: https://github.com/Karumi/KataTODOApiClientIOS
+[bothamUI]: https://github.com/Karumi/BothamUI/

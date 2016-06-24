@@ -12,8 +12,11 @@ import UIKit
 class SuperHeroesDetectorServiceLocator {
 
     static func provideRootViewController() -> UIViewController {
-        let viewController = storyBoard.instantiateInitialViewController()!
-        return viewController
+        let viewController = storyBoard.instantiateInitialViewController() as! SuperHeroesViewController
+        let superHeroesDetector = provideSuperHeroesDetector()
+        viewController.presenter = SuperHeroesPresenter(view: viewController,
+                                                        superHeroesDetector: superHeroesDetector)
+        return UINavigationController(rootViewController: viewController)
     }
 
     static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
