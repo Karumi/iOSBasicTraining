@@ -97,7 +97,8 @@ class SuperHeroesDetectorTests: XCTestCase {
     }
 
     private func givenASuperHeroesDetector() -> SuperHeroesDetector {
-        return SuperHeroesDetector(apiClient: apiClient, capturedSuperHeroesStorage: storage)
+        let repository = SuperHeroesRepository(apiClient: apiClient, capturedSuperHeroesStorage: storage)
+        return SuperHeroesDetector(superHeroesRepository: repository)
     }
 
 }
