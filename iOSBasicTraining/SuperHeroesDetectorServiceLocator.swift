@@ -13,23 +13,33 @@ class SuperHeroesDetectorServiceLocator {
 
     static func provideRootViewController() -> UIViewController {
         let viewController = storyBoard.instantiateInitialViewController() as! SuperHeroesViewController
-        let superHeroesDetector = provideSuperHeroesDetector()
+        let getSuperHeroes = provideGetSuperHeroesUseCase()
         viewController.presenter = SuperHeroesPresenter(view: viewController,
-                                                        superHeroesDetector: superHeroesDetector)
+                                                        getSuperHeroes: getSuperHeroes)
         return UINavigationController(rootViewController: viewController)
     }
 
     static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
         let viewController = provideUIViewControllerWithName("SuperHeroDetailViewController") as! SuperHeroDetailViewController
-        let superHeroesDetector = provideSuperHeroesDetector()
+        let captureSuperHero = provideCaptureSuperHeroUseCase()
         viewController.presenter = SuperHeroDetailPresenter(view: viewController,
-                                                            superHeroesDetector: superHeroesDetector,
+                                                            captureSuperHero: captureSuperHero,
                                                             superHero: superHero)
         return viewController
     }
 
     private static func provideUIViewControllerWithName(name: String) -> UIViewController {
         return storyBoard.instantiateViewControllerWithIdentifier(name)
+    }
+    
+    private static func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
+        let detector = provideSuperHeroesDetector()
+        return GetSuperHeroes(superHeroesDetector: detector)
+    }
+    
+    private static func provideCaptureSuperHeroUseCase() -> CaptureSuperHero {
+        let detector = provideSuperHeroesDetector()
+        return CaptureSuperHero(superHeroesDetector: detector)
     }
 
     private static func provideSuperHeroesDetector() -> SuperHeroesDetector {

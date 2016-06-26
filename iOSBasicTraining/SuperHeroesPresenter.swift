@@ -11,11 +11,11 @@ import Foundation
 class SuperHeroesPresenter: Presenter {
 
     private weak var view: SuperHeroesView?
-    private let superHeroesDetector: SuperHeroesDetector
+    private let getSuperHeroes: GetSuperHeroes
 
-    init(view: SuperHeroesView, superHeroesDetector: SuperHeroesDetector) {
+    init(view: SuperHeroesView, getSuperHeroes: GetSuperHeroes) {
         self.view = view
-        self.superHeroesDetector = superHeroesDetector
+        self.getSuperHeroes = getSuperHeroes
     }
 
     func viewWillAppear() {
@@ -24,7 +24,7 @@ class SuperHeroesPresenter: Presenter {
 
     private func loadSuperHeroes() {
         view?.showLoading()
-        superHeroesDetector.getSuperHeroes { result in
+        getSuperHeroes.getAll { result in
             self.view?.hideLoading()
             switch result {
             case .Success(let superHeroes):
