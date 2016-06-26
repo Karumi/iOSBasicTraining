@@ -48,6 +48,7 @@ As super heroes are now super villans the Cental City Police Departament also re
 * **Task 4:**
 * Refactor the already implemented view controllers to use [Model View Presenter][mvp] to develop the application presentation layer.
 * Create all the use cases needed to connect your presentation layer with the already implemented domain.
+* Create a repository to hide the usage of the SuperHeroesAPIClient as data source and be able to add more data sources in the future if needed.
 * Bonus:
 * Review other UI patterns like [Model View ViewModel][mvvm] and reimplement the presentation layer.
 
