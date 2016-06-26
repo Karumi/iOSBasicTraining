@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4B01599EEDAA398935B7A381 /* Pods_iOSBasicTrainingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717EB6991E4CF84FA04D8E00 /* Pods_iOSBasicTrainingTests.framework */; };
 		646C25C373F5DC9F927CF5D1 /* Pods_iOSBasicTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A05B32F43B02AFE749853A /* Pods_iOSBasicTraining.framework */; };
+		EB4737501D1FEFFD0055956A /* CaptureSuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB47374F1D1FEFFD0055956A /* CaptureSuperHero.swift */; };
+		EB4737521D1FF0080055956A /* GetSuperHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4737511D1FF0080055956A /* GetSuperHeroes.swift */; };
+		EB4737551D1FF1D10055956A /* SuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4737541D1FF1D10055956A /* SuperHeroesRepository.swift */; };
 		EB7945801D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79457F1D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift */; };
 		EB7945831D1D51D600115EC8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945821D1D51D600115EC8 /* UIView.swift */; };
 		EB7945851D1D744400115EC8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7945841D1D744400115EC8 /* UIColor.swift */; };
@@ -54,6 +57,9 @@
 		717EB6991E4CF84FA04D8E00 /* Pods_iOSBasicTrainingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBasicTrainingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23F24A9F3E00ED5C6923BAF /* Pods-iOSBasicTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBasicTraining.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBasicTraining/Pods-iOSBasicTraining.release.xcconfig"; sourceTree = "<group>"; };
 		D2A05B32F43B02AFE749853A /* Pods_iOSBasicTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBasicTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB47374F1D1FEFFD0055956A /* CaptureSuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSuperHero.swift; sourceTree = "<group>"; };
+		EB4737511D1FF0080055956A /* GetSuperHeroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHeroes.swift; sourceTree = "<group>"; };
+		EB4737541D1FF1D10055956A /* SuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesRepository.swift; sourceTree = "<group>"; };
 		EB79457F1D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		EB7945821D1D51D600115EC8 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EB7945841D1D744400115EC8 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -125,6 +131,15 @@
 				38CDB279D2411D6931C099DA /* Pods-iOSBasicTrainingTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB4737531D1FF0A20055956A /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				EB47374F1D1FEFFD0055956A /* CaptureSuperHero.swift */,
+				EB4737511D1FF0080055956A /* GetSuperHeroes.swift */,
+			);
+			name = "Use Cases";
 			sourceTree = "<group>";
 		};
 		EB79457D1D1D4FCD00115EC8 /* UI */ = {
@@ -234,11 +249,13 @@
 		EBA82A541D1D25FA0089DF88 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EB4737531D1FF0A20055956A /* Use Cases */,
 				EBA82A661D1D3B5B0089DF88 /* Storage */,
 				EBA82A631D1D3ADD0089DF88 /* API Client */,
 				EBA82A561D1D26180089DF88 /* SuperHero.swift */,
 				EBA82A581D1D26920089DF88 /* Comic.swift */,
 				EBA82A611D1D3AD10089DF88 /* SuperHeroesDetector.swift */,
+				EB4737541D1FF1D10055956A /* SuperHeroesRepository.swift */,
 				EBA82A691D1D3FE10089DF88 /* SuperHeroesDetectorError.swift */,
 			);
 			name = Domain;
@@ -501,7 +518,10 @@
 				EBA82A6A1D1D3FE10089DF88 /* SuperHeroesDetectorError.swift in Sources */,
 				EBA82A351D1D1F4E0089DF88 /* SuperHeroesViewController.swift in Sources */,
 				EB7945801D1D4FDE00115EC8 /* SuperHeroDetailViewController.swift in Sources */,
+				EB4737551D1FF1D10055956A /* SuperHeroesRepository.swift in Sources */,
+				EB4737521D1FF0080055956A /* GetSuperHeroes.swift in Sources */,
 				EBA82A591D1D26920089DF88 /* Comic.swift in Sources */,
+				EB4737501D1FEFFD0055956A /* CaptureSuperHero.swift in Sources */,
 				EB79458E1D1D85BD00115EC8 /* Presenter.swift in Sources */,
 				EB7945901D1D862E00115EC8 /* SuperHeroesPresenter.swift in Sources */,
 				EB7945941D1D882400115EC8 /* SuperHeroesDetectorViewController.swift in Sources */,

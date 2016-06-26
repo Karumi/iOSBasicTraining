@@ -11,26 +11,15 @@ import Result
 
 class SuperHeroesDetector {
 
-    private let apiClient: SuperHeroesAPIClient
-    private let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
+    private let superHeroesRepository: SuperHeroesRepository
 
-    init(apiClient: SuperHeroesAPIClient, capturedSuperHeroesStorage: CapturedSuperHeroesStorage) {
-        self.apiClient = apiClient
-        self.capturedSuperHeroesStorage = capturedSuperHeroesStorage
+    init(superHeroesRepository: SuperHeroesRepository) {
+        self.superHeroesRepository = superHeroesRepository
     }
 
     func getSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
-        return apiClient.getAllSuperHeroes { result in
-            switch result {
-            case .Success(let superHeroes):
-                let nonCapturedSuperHeroes = superHeroes.filter {
-                    !self.capturedSuperHeroesStorage.isSuperHeroCaptured($0.id)
-                }
-                completion(Result(nonCapturedSuperHeroes))
-                break
-            case .Failure(let apiClientError):
-                completion(Result(error: apiClientError))
-            }
+        superHeroesRepository.getAll { result in
+            completion(result)
         }
     }
 
@@ -38,8 +27,7 @@ class SuperHeroesDetector {
         guard !id.isEmpty else {
             return Result(error: SuperHeroesDetectorError.SuperHeroNotFound)
         }
-        capturedSuperHeroesStorage.markSuperHeroAsCaptured(id)
-        return Result(id)
+        return superHeroesRepository.markSuperHeroAsCaptured(id)
     }
 
 }
