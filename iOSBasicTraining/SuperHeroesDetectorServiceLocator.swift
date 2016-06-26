@@ -43,8 +43,13 @@ class SuperHeroesDetectorServiceLocator {
     }
 
     private static func provideSuperHeroesDetector() -> SuperHeroesDetector {
+        let repository = provideSuperHeroesRepository()
+        return SuperHeroesDetector(superHeroesRepository: repository)
+    }
+    
+    private static func provideSuperHeroesRepository() -> SuperHeroesRepository {
         let apiClient = provideSuperHeroesAPIClient()
-        return SuperHeroesDetector(apiClient: apiClient,
+        return SuperHeroesRepository(apiClient: apiClient,
                                    capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
     }
 
