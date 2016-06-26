@@ -13,17 +13,17 @@ class SuperHeroesDetectorServiceLocator {
 
     static func provideRootViewController() -> UIViewController {
         let viewController = storyBoard.instantiateInitialViewController() as! SuperHeroesViewController
-        let superHeroesDetector = provideSuperHeroesDetector()
+        let getSuperHeroes = provideGetSuperHeroesUseCase()
         viewController.presenter = SuperHeroesPresenter(view: viewController,
-                                                        superHeroesDetector: superHeroesDetector)
+                                                        getSuperHeroes: getSuperHeroes)
         return UINavigationController(rootViewController: viewController)
     }
 
     static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
         let viewController = provideUIViewControllerWithName("SuperHeroDetailViewController") as! SuperHeroDetailViewController
-        let superHeroesDetector = provideSuperHeroesDetector()
+        let captureSuperHero = provideCaptureSuperHeroUseCase()
         viewController.presenter = SuperHeroDetailPresenter(view: viewController,
-                                                            superHeroesDetector: superHeroesDetector,
+                                                            captureSuperHero: captureSuperHero,
                                                             superHero: superHero)
         return viewController
     }
@@ -32,9 +32,24 @@ class SuperHeroesDetectorServiceLocator {
         return storyBoard.instantiateViewControllerWithIdentifier(name)
     }
 
+    private static func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
+        let detector = provideSuperHeroesDetector()
+        return GetSuperHeroes(superHeroesDetector: detector)
+    }
+
+    private static func provideCaptureSuperHeroUseCase() -> CaptureSuperHero {
+        let detector = provideSuperHeroesDetector()
+        return CaptureSuperHero(superHeroesDetector: detector)
+    }
+
     private static func provideSuperHeroesDetector() -> SuperHeroesDetector {
+        let repository = provideSuperHeroesRepository()
+        return SuperHeroesDetector(superHeroesRepository: repository)
+    }
+
+    private static func provideSuperHeroesRepository() -> SuperHeroesRepository {
         let apiClient = provideSuperHeroesAPIClient()
-        return SuperHeroesDetector(apiClient: apiClient,
+        return SuperHeroesRepository(apiClient: apiClient,
                                    capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
     }
 

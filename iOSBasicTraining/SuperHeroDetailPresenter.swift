@@ -11,12 +11,12 @@ import Foundation
 class SuperHeroDetailPresenter: Presenter {
 
     private weak var view: SuperHeroDetailView?
-    private let superHeroesDetector: SuperHeroesDetector
+    private let captureSuperHero: CaptureSuperHero
     private let superHero: SuperHero
 
-    init(view: SuperHeroDetailView, superHeroesDetector: SuperHeroesDetector, superHero: SuperHero) {
+    init(view: SuperHeroDetailView, captureSuperHero: CaptureSuperHero, superHero: SuperHero) {
         self.view = view
-        self.superHeroesDetector = superHeroesDetector
+        self.captureSuperHero = captureSuperHero
         self.superHero = superHero
     }
 
@@ -26,7 +26,7 @@ class SuperHeroDetailPresenter: Presenter {
 
     func didTapCaptureButton() {
         let id = superHero.id
-        let result = superHeroesDetector.captureSuperHero(id)
+        let result = captureSuperHero.capture(id)
         switch result {
         case .Success(_):
             view?.hideCaptureButton()
