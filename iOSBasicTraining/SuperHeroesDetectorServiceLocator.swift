@@ -31,12 +31,12 @@ class SuperHeroesDetectorServiceLocator {
     private static func provideUIViewControllerWithName(name: String) -> UIViewController {
         return storyBoard.instantiateViewControllerWithIdentifier(name)
     }
-    
+
     private static func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
         let detector = provideSuperHeroesDetector()
         return GetSuperHeroes(superHeroesDetector: detector)
     }
-    
+
     private static func provideCaptureSuperHeroUseCase() -> CaptureSuperHero {
         let detector = provideSuperHeroesDetector()
         return CaptureSuperHero(superHeroesDetector: detector)
@@ -46,7 +46,7 @@ class SuperHeroesDetectorServiceLocator {
         let repository = provideSuperHeroesRepository()
         return SuperHeroesDetector(superHeroesRepository: repository)
     }
-    
+
     private static func provideSuperHeroesRepository() -> SuperHeroesRepository {
         let apiClient = provideSuperHeroesAPIClient()
         return SuperHeroesRepository(apiClient: apiClient,

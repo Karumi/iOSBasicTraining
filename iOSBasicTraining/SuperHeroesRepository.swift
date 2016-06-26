@@ -13,7 +13,7 @@ class SuperHeroesRepository {
 
     private let apiClient: SuperHeroesAPIClient
     private let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
-    
+
     init(apiClient: SuperHeroesAPIClient, capturedSuperHeroesStorage: CapturedSuperHeroesStorage) {
         self.apiClient = apiClient
         self.capturedSuperHeroesStorage = capturedSuperHeroesStorage
@@ -33,7 +33,7 @@ class SuperHeroesRepository {
             }
         }
     }
-    
+
     func markSuperHeroAsCaptured(id: String) -> Result<String, SuperHeroesDetectorError> {
         capturedSuperHeroesStorage.markSuperHeroAsCaptured(id)
         return Result(id)

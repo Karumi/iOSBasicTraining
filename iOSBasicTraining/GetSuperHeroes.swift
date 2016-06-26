@@ -12,11 +12,11 @@ import Result
 class GetSuperHeroes {
 
     private let superHeroesDetector: SuperHeroesDetector
-    
+
     init(superHeroesDetector: SuperHeroesDetector) {
         self.superHeroesDetector = superHeroesDetector
     }
-    
+
     func getAll(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         superHeroesDetector.getSuperHeroes { result in
             completion(result)
