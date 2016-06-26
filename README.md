@@ -18,55 +18,60 @@ As super heroes are now super villans the Cental City Police Departament also re
 ##Tasks
 
 * **Task 1:**
-* Create an empty iOS project from XCode.
-* Configure [CocoaPods][cocoapods].
-* Implement part of the domain model abstracting the data source.
-* Write the unit tests needed to cover this functionality. You can use [Nimble][nimble] to implement your matchers.
-* **Bonus:**
-* Configure Travis-CI as a continous integration system.
-* Configure Swiftlint as checkstyle tool.
-* Change application logo.
-* Change the splash screen xib to use the app logo.
+
+    * Create an empty iOS project from XCode.
+    * Configure [CocoaPods][cocoapods].
+    * Implement part of the domain model abstracting the data source.
+    * Write the unit tests needed to cover this functionality. You can use [Nimble][nimble] to implement your matchers.
+    * **Bonus:**
+        * Configure Travis-CI as a continous integration system.
+        * Configure Swiftlint as checkstyle tool.
+        * Change application logo.
+        * Change the splash screen xib to use the app logo.
 
 * **Task 2:**
-* Implement the Super Hero Detail UIViewController using the XCode interface builder and show some mocked data there.
-* Add a button to the first view controller to connect this view controller with the detail view controller and implement this navigation.
-* **Bonus:**
-* Read the [KIF Framework][kif] documentation and sample project.
-* Using the iOS simulator review the accessibility labels configured.
+
+    * Implement the Super Hero Detail UIViewController using the XCode interface builder and show some mocked data there.
+    * Add a button to the first view controller to connect this view controller with the detail view controller and implement this navigation.
+    * **Bonus:**
+        * Read the [KIF Framework][kif] documentation and sample project.
+        * Using the iOS simulator review the accessibility labels configured.
 
 * **Task 3:**
-* Implement the Super Heroes UIViewController using a table view.
-* Show some mocked data in the already implemented Super Heroes screen.
-* Connect the super heroes screen with the system you wrote during the task 1.
-* The tests needed to cover this new funtionality will be covered during another [exercise][kataSuperHeroes].
-* **Bonus:**
-* Replace your UITableView widget with a UICollectionView.
-* Change the Super Heroes screen to show 3 columns if the device is an iPad and 1 column by default.
-* Write some UI Tests using the UI Test recorder.
+
+    * Implement the Super Heroes UIViewController using a table view.
+    * Show some mocked data in the already implemented Super Heroes screen.
+    * Connect the super heroes screen with the system you wrote during the task 1.
+    * The tests needed to cover this new funtionality will be covered during another [exercise][kataSuperHeroes].
+    * **Bonus:**
+        * Replace your UITableView widget with a UICollectionView.
+        * Change the Super Heroes screen to show 3 columns if the device is an iPad and 1 column by default.
+        * Write some UI Tests using the UI Test recorder.
 
 * **Task 4:**
-* Refactor the already implemented view controllers to use [Model View Presenter][mvp] to develop the application presentation layer.
-* Create all the use cases needed to connect your presentation layer with the already implemented domain.
-* Create a repository to hide the usage of the SuperHeroesAPIClient as data source and be able to add more data sources in the future if needed.
-* Bonus:
-* Review other UI patterns like [Model View ViewModel][mvvm] and reimplement the presentation layer.
+
+    * Refactor the already implemented view controllers to use [Model View Presenter][mvp] to develop the application presentation layer.
+    * Create all the use cases needed to connect your presentation layer with the already implemented domain.
+    * Create a repository to hide the usage of the SuperHeroesAPIClient as data source and be able to add more data sources in the future if needed.
+    * Bonus:
+        * Review other UI patterns like [Model View ViewModel][mvvm] and reimplement the presentation layer.
 
 * **Task 5:**
-* Connect your already implemented domain with the remote API using an already implemented [Marvel API Client][marvelApiClient] following the repository pattern.
-* The tests needed to cover this new funtionality will be covered during aother [exercise][kataTodoAPIClient].
-* **Bonus:**
-* Using Alamofire implement your own Marvel API Client and replace the old one with this one.
-* Write some integration tests using HTTP stubbing with [Nocilla][nocilla] 
-* Add persistence to the application.
-* Replace the usage of completion handlers with promisses or observables.
+
+    * Connect your already implemented domain with the remote API using an already implemented [Marvel API Client][marvelApiClient] following the repository pattern.
+    * The tests needed to cover this new funtionality will be covered during aother [exercise][kataTodoAPIClient].
+    * **Bonus:**
+        * Using Alamofire implement your own Marvel API Client and replace the old one with this one.
+        * Write some integration tests using HTTP stubbing with [Nocilla][nocilla] 
+        * Add persistence to the application.
+        * Replace the usage of completion handlers with promisses or observables.
 
 * **Extra tasks:**
 
-* Change your [Model View Presenter][mvp] implementation to use [Botham UI][bothamUI]
-* Add a pull to refresh mechanism.
-* Add an infinite load mechanism and implement pagination.
-* Improve the UX related to the capture a super hero process avoiding the blink effect when a super hero is captured. How can you do this?
+    * Change your [Model View Presenter][mvp] implementation to use [Botham UI][bothamUI]
+    * Add a pull to refresh mechanism.
+    * Add an infinite load mechanism and implement pagination.
+    * Improve the UX related to the capture a super hero process avoiding the blink effect when a super hero is captured. How can you do this?
 
 License
 -------
