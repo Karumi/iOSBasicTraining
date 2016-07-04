@@ -9,27 +9,17 @@
 import Foundation
 
 class CapturedSuperHeroesStorage {
-
-    private static let storageName = "CapturedSuperHeroesStorage"
-
-    private let userDefaults: NSUserDefaults
-
-    init() {
-        userDefaults = NSUserDefaults.init(suiteName: CapturedSuperHeroesStorage.storageName)!
-    }
+    private var storage: [String: Bool] = [:]
 
     func isSuperHeroCaptured(superHeroId: String) -> Bool {
-        return userDefaults.boolForKey(superHeroId)
+        return storage[superHeroId] ?? false
     }
 
     func markSuperHeroAsCaptured(superHeroId: String) {
-        userDefaults.setBool(true, forKey: superHeroId)
+        storage[superHeroId] = true
     }
 
     func clear() {
-        for superHeroId in userDefaults.dictionaryRepresentation().keys {
-            userDefaults.removeObjectForKey(superHeroId)
-        }
+        storage = [:]
     }
-
 }
