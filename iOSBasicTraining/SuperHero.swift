@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SuperHero: CustomDebugStringConvertible  {
+struct SuperHero: CustomDebugStringConvertible {
 
     let id: String
     let name: String
