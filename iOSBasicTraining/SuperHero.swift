@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SuperHero {
+struct SuperHero: CustomDebugStringConvertible  {
 
     let id: String
     let name: String
@@ -16,13 +16,14 @@ struct SuperHero {
     let comics: [Comic]
 
     var formalDescription: String {
-        get {
-            return "\(name) - \(description ?? "No description provided.")"
-        }
+        return "\(name) - \(description ?? "No description provided.")"
     }
 
     func isAvenger() -> Bool {
         return id.containsString("4")
     }
 
+    var debugDescription: String {
+        return "\(id) \(name) \(description)"
+    }
 }
