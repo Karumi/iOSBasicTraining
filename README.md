@@ -1,5 +1,5 @@
 # ![karumilogo] iOS Basic Training 
-[![Build Status](https://travis-ci.com/Karumi/iOSBasicTraining.svg?token=Kb2RqPaWxFZ8XPxpqvqz&branch=master)](https://travis-ci.com/Karumi/iOSBasicTraining)
+[![Build Status](https://travis-ci.org/Karumi/iOSBasicTraining.svg?branch=master)](https://travis-ci.org/Karumi/iOSBasicTraining)
 
 Code associated to the first level of the Karumi iOS Training.
 
