@@ -43,7 +43,7 @@ class SuperHeroesDetectorTests: XCTestCase {
             result = response
         }
 
-        expect(result?.error).toEventually(equal(SuperHeroesDetectorError.ConnectionError))
+        expect(result?.error).toEventually(equal(SuperHeroesDetectorError.connectionError))
     }
 
     func testReturnsAnEmptyListOfSuperHeroesIfThereAreNoSuperHeroes() {
@@ -81,7 +81,7 @@ class SuperHeroesDetectorTests: XCTestCase {
     }
 
     fileprivate func givenThereIsNoConnection() {
-        apiClient.getSuperHeroesError = .ConnectionError
+        apiClient.getSuperHeroesError = .connectionError
     }
 
     fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10) -> [SuperHero] {
