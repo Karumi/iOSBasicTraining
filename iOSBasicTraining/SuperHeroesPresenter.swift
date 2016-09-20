@@ -10,8 +10,8 @@ import Foundation
 
 class SuperHeroesPresenter: Presenter {
 
-    private weak var view: SuperHeroesView?
-    private let getSuperHeroes: GetSuperHeroes
+    fileprivate weak var view: SuperHeroesView?
+    fileprivate let getSuperHeroes: GetSuperHeroes
 
     init(view: SuperHeroesView, getSuperHeroes: GetSuperHeroes) {
         self.view = view
@@ -22,35 +22,35 @@ class SuperHeroesPresenter: Presenter {
         loadSuperHeroes()
     }
 
-    private func loadSuperHeroes() {
+    fileprivate func loadSuperHeroes() {
         view?.showLoading()
         getSuperHeroes.getAll { result in
             self.view?.hideLoading()
             switch result {
-            case .Success(let superHeroes):
+            case .success(let superHeroes):
                 self.showSuperHeroes(superHeroes)
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 self.showError(error)
                 break
             }
         }
     }
 
-    private func showSuperHeroes(superHeroes: [SuperHero]) {
+    fileprivate func showSuperHeroes(_ superHeroes: [SuperHero]) {
         view?.superHeroes = superHeroes
         view?.showingEmptyCase = superHeroes.isEmpty
         view?.showingErrorCase = false
     }
 
-    private func showError(error: SuperHeroesDetectorError) {
+    fileprivate func showError(_ error: SuperHeroesDetectorError) {
         guard let view = view else {
             return
         }
 
         view.showingEmptyCase = false
         switch error {
-        case .ConnectionError:
+        case .connectionError:
             view.showingErrorCase = view.superHeroes.isEmpty
             if !view.superHeroes.isEmpty {
                 view.showMessage("Ups, there is no connection!")

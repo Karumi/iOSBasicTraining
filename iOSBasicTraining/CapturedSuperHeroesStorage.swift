@@ -10,25 +10,25 @@ import Foundation
 
 class CapturedSuperHeroesStorage {
 
-    private static let storageName = "CapturedSuperHeroesStorage"
+    fileprivate static let storageName = "CapturedSuperHeroesStorage"
 
-    private let userDefaults: NSUserDefaults
+    fileprivate let userDefaults: UserDefaults
 
     init() {
-        userDefaults = NSUserDefaults.init(suiteName: CapturedSuperHeroesStorage.storageName)!
+        userDefaults = UserDefaults.init(suiteName: CapturedSuperHeroesStorage.storageName)!
     }
 
-    func isSuperHeroCaptured(superHeroId: String) -> Bool {
-        return userDefaults.boolForKey(superHeroId)
+    func isSuperHeroCaptured(_ superHeroId: String) -> Bool {
+        return userDefaults.bool(forKey: superHeroId)
     }
 
-    func markSuperHeroAsCaptured(superHeroId: String) {
-        userDefaults.setBool(true, forKey: superHeroId)
+    func markSuperHeroAsCaptured(_ superHeroId: String) {
+        userDefaults.set(true, forKey: superHeroId)
     }
 
     func clear() {
         for superHeroId in userDefaults.dictionaryRepresentation().keys {
-            userDefaults.removeObjectForKey(superHeroId)
+            userDefaults.removeObject(forKey: superHeroId)
         }
     }
 

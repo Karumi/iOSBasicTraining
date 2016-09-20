@@ -17,7 +17,7 @@ protocol Presenter {
 
 protocol View: class {
 
-    func showMessage(message: String)
+    func showMessage(_ message: String)
 
 }
 

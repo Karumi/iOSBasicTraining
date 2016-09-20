@@ -15,7 +15,7 @@ class MockSuperHeroesAPIClient: SuperHeroesAPIClient {
     var superHeroes: [SuperHero]?
     var getSuperHeroesError: SuperHeroesDetectorError?
 
-    func getAllSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
+    func getAllSuperHeroes(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         if let superHeroes = superHeroes {
             completion(Result(superHeroes))
         } else if let getSuperHeroesError = getSuperHeroesError {

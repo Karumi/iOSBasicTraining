@@ -30,16 +30,16 @@ class SuperHeroDetailViewController: SuperHeroesDetectorViewController, SuperHer
         presenter.didTapCaptureButton()
     }
 
-    func showSuperHero(superHero: SuperHero) {
-        title = superHero.name.uppercaseString
+    func showSuperHero(_ superHero: SuperHero) {
+        title = superHero.name.uppercased()
         nameLabel.text = superHero.name
         descriptionLabel.text = superHero.description
-        avengersBadgeImageView.hidden = !superHero.isAvenger()
-        photoImageView.sd_setImageWithURL(superHero.image)
+        avengersBadgeImageView.isHidden = !superHero.isAvenger()
+        photoImageView.sd_setImage(with: superHero.image as URL!)
     }
 
     func hideCaptureButton() {
-        captureButton.hidden = true
+        captureButton.isHidden = true
     }
 
 }

@@ -11,21 +11,21 @@ import Result
 
 class SuperHeroesDetector {
 
-    private let superHeroesRepository: SuperHeroesRepository
+    fileprivate let superHeroesRepository: SuperHeroesRepository
 
     init(superHeroesRepository: SuperHeroesRepository) {
         self.superHeroesRepository = superHeroesRepository
     }
 
-    func getSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
+    func getSuperHeroes(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         superHeroesRepository.getAll { result in
             completion(result)
         }
     }
 
-    func captureSuperHero(id: String) -> Result<String, SuperHeroesDetectorError> {
+    func captureSuperHero(_ id: String) -> Result<String, SuperHeroesDetectorError> {
         guard !id.isEmpty else {
-            return Result(error: SuperHeroesDetectorError.SuperHeroNotFound)
+            return Result(error: SuperHeroesDetectorError.superHeroNotFound)
         }
         return superHeroesRepository.markSuperHeroAsCaptured(id)
     }

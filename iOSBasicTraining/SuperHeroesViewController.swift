@@ -27,19 +27,19 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
 
     var showingEmptyCase: Bool {
         get {
-            return !emptyCaseView.hidden
+            return !emptyCaseView.isHidden
         }
         set {
-            emptyCaseView.hidden = !showingEmptyCase
+            emptyCaseView.isHidden = !showingEmptyCase
         }
     }
 
     var showingErrorCase: Bool {
         get {
-            return !errorCaseView.hidden
+            return !errorCaseView.isHidden
         }
         set {
-            errorCaseView.hidden = !showingErrorCase
+            errorCaseView.isHidden = !showingErrorCase
         }
     }
 
@@ -50,7 +50,7 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
         configureNavigationBarBackButton()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
@@ -63,35 +63,35 @@ class SuperHeroesViewController: SuperHeroesDetectorViewController,
         activityIndicatorView.stopAnimating()
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return superHeroes.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SuperHeroTableViewCell", forIndexPath: indexPath) as! SuperHeroTableViewCell
-        let hero = superHeroes[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SuperHeroTableViewCell", for: indexPath) as! SuperHeroTableViewCell
+        let hero = superHeroes[(indexPath as NSIndexPath).row]
         cell.configureForHero(hero)
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let superHero = superHeroes[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let superHero = superHeroes[(indexPath as NSIndexPath).row]
         let viewController = SuperHeroesDetectorServiceLocator.provideSuperHeroDetailViewController(superHero)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
 
-    private func configureNavigationBarTitle() {
+    fileprivate func configureNavigationBarTitle() {
         title = "Super Heroes Detector"
     }
 
-    private func configureTableView() {
+    fileprivate func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
 
-    private func configureNavigationBarBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+    fileprivate func configureNavigationBarBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }

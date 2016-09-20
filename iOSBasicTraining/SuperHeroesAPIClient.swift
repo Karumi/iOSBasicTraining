@@ -11,6 +11,6 @@ import Result
 
 protocol SuperHeroesAPIClient {
 
-    func getAllSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void)
+    func getAllSuperHeroes(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void)
 
 }

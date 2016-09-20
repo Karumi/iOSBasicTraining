@@ -11,30 +11,30 @@ import Result
 
 class SuperHeroesRepository {
 
-    private let apiClient: SuperHeroesAPIClient
-    private let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
+    fileprivate let apiClient: SuperHeroesAPIClient
+    fileprivate let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
 
     init(apiClient: SuperHeroesAPIClient, capturedSuperHeroesStorage: CapturedSuperHeroesStorage) {
         self.apiClient = apiClient
         self.capturedSuperHeroesStorage = capturedSuperHeroesStorage
     }
 
-    func getAll(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
+    func getAll(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         return apiClient.getAllSuperHeroes { result in
             switch result {
-            case .Success(let superHeroes):
+            case .success(let superHeroes):
                 let nonCapturedSuperHeroes = superHeroes.filter {
                     !self.capturedSuperHeroesStorage.isSuperHeroCaptured($0.id)
                 }
                 completion(Result(nonCapturedSuperHeroes))
                 break
-            case .Failure(let apiClientError):
+            case .failure(let apiClientError):
                 completion(Result(error: apiClientError))
             }
         }
     }
 
-    func markSuperHeroAsCaptured(id: String) -> Result<String, SuperHeroesDetectorError> {
+    func markSuperHeroAsCaptured(_ id: String) -> Result<String, SuperHeroesDetectorError> {
         capturedSuperHeroesStorage.markSuperHeroAsCaptured(id)
         return Result(id)
     }

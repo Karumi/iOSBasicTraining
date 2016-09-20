@@ -19,7 +19,7 @@ class SuperHeroesDetectorServiceLocator {
         return UINavigationController(rootViewController: viewController)
     }
 
-    static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
+    static func provideSuperHeroDetailViewController(_ superHero: SuperHero) -> UIViewController {
         let viewController = provideUIViewControllerWithName("SuperHeroDetailViewController") as! SuperHeroDetailViewController
         let captureSuperHero = provideCaptureSuperHeroUseCase()
         viewController.presenter = SuperHeroDetailPresenter(view: viewController,
@@ -28,37 +28,37 @@ class SuperHeroesDetectorServiceLocator {
         return viewController
     }
 
-    private static func provideUIViewControllerWithName(name: String) -> UIViewController {
-        return storyBoard.instantiateViewControllerWithIdentifier(name)
+    fileprivate static func provideUIViewControllerWithName(_ name: String) -> UIViewController {
+        return storyBoard.instantiateViewController(withIdentifier: name)
     }
 
-    private static func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
+    fileprivate static func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
         let detector = provideSuperHeroesDetector()
         return GetSuperHeroes(superHeroesDetector: detector)
     }
 
-    private static func provideCaptureSuperHeroUseCase() -> CaptureSuperHero {
+    fileprivate static func provideCaptureSuperHeroUseCase() -> CaptureSuperHero {
         let detector = provideSuperHeroesDetector()
         return CaptureSuperHero(superHeroesDetector: detector)
     }
 
-    private static func provideSuperHeroesDetector() -> SuperHeroesDetector {
+    fileprivate static func provideSuperHeroesDetector() -> SuperHeroesDetector {
         let repository = provideSuperHeroesRepository()
         return SuperHeroesDetector(superHeroesRepository: repository)
     }
 
-    private static func provideSuperHeroesRepository() -> SuperHeroesRepository {
+    fileprivate static func provideSuperHeroesRepository() -> SuperHeroesRepository {
         let apiClient = provideSuperHeroesAPIClient()
         return SuperHeroesRepository(apiClient: apiClient,
                                    capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
     }
 
-    private static func provideSuperHeroesAPIClient() -> SuperHeroesAPIClient {
+    fileprivate static func provideSuperHeroesAPIClient() -> SuperHeroesAPIClient {
         return FakeSuperHeroesAPIClient()
     }
 
-    private static var storyBoard: UIStoryboard = {
-        return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    fileprivate static var storyBoard: UIStoryboard = {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
     }()
 
 }

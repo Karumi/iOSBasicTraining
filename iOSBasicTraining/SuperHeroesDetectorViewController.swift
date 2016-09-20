@@ -12,7 +12,7 @@ import Toast
 
 class SuperHeroesDetectorViewController: UIViewController, View {
 
-    func showMessage(message: String) {
+    func showMessage(_ message: String) {
         view.makeToast(message)
     }
 

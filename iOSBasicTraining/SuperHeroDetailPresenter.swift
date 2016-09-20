@@ -10,9 +10,9 @@ import Foundation
 
 class SuperHeroDetailPresenter: Presenter {
 
-    private weak var view: SuperHeroDetailView?
-    private let captureSuperHero: CaptureSuperHero
-    private let superHero: SuperHero
+    fileprivate weak var view: SuperHeroDetailView?
+    fileprivate let captureSuperHero: CaptureSuperHero
+    fileprivate let superHero: SuperHero
 
     init(view: SuperHeroDetailView, captureSuperHero: CaptureSuperHero, superHero: SuperHero) {
         self.view = view
@@ -28,7 +28,7 @@ class SuperHeroDetailPresenter: Presenter {
         let id = superHero.id
         let result = captureSuperHero.capture(id)
         switch result {
-        case .Success(_):
+        case .success(_):
             view?.hideCaptureButton()
             view?.showMessage("Evil super hero captured!")
             break
@@ -41,7 +41,7 @@ class SuperHeroDetailPresenter: Presenter {
 
 protocol SuperHeroDetailView: View {
 
-    func showSuperHero(superHero: SuperHero)
+    func showSuperHero(_ superHero: SuperHero)
     func hideCaptureButton()
 
 }

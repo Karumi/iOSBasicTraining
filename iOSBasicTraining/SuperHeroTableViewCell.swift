@@ -16,23 +16,23 @@ class SuperHeroTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
-    func configureForHero(hero: SuperHero) {
+    func configureForHero(_ hero: SuperHero) {
         nameLabel.text = hero.name
-        photoImageView.sd_setImageWithURL(hero.image)
-        avengersBadgeImageView.hidden = !hero.isAvenger()
+        photoImageView.sd_setImage(with: hero.image as URL!)
+        avengersBadgeImageView.isHidden = !hero.isAvenger()
         applyImageGradient(photoImageView)
     }
 
-    private func applyImageGradient(thumbnailImage: UIImageView) {
+    fileprivate func applyImageGradient(_ thumbnailImage: UIImageView) {
         guard thumbnailImage.layer.sublayers == nil else {
             return
         }
         let gradient: CAGradientLayer = CAGradientLayer(layer: thumbnailImage.layer)
         gradient.frame = thumbnailImage.bounds
-        gradient.colors = [UIColor.gradientStartColor.CGColor, UIColor.gradientEndColor.CGColor]
+        gradient.colors = [UIColor.gradientStartColor.cgColor, UIColor.gradientEndColor.cgColor]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.6)
         gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
-        thumbnailImage.layer.insertSublayer(gradient, atIndex: 0)
+        thumbnailImage.layer.insertSublayer(gradient, at: 0)
     }
 
 }
