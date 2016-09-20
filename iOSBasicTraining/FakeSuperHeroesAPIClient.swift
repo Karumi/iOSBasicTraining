@@ -11,7 +11,7 @@ import Result
 
 class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
 
-    private let superHeroes: [SuperHero]
+    fileprivate let superHeroes: [SuperHero]
 
     init() {
         superHeroes = [
@@ -23,7 +23,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "High Evolutionary supposedly abducted the twins when they were babies and "
                     + "experimented on them, once he was disgusted with the results, he returned them to"
                     + " Wundagore, disguised as regular mutants.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/537bc2375dfb9.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/537bc2375dfb9.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "2easd24",
@@ -32,7 +32,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "industrialist Tony Stark instead created an advanced suit of armor to save his "
                     + "life and escape captivity. Now with a new outlook on life, Tony uses his money "
                     + "and intelligence to make the world a safer, better place as Iron Man.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "3pqower",
@@ -41,7 +41,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "was captured by a secret Canadian organization and given an unbreakable "
                     + "skeleton and claws. Treated like an animal, it took years for him to control"
                     + " himself. Now, he's a premiere member of both the X-Men and the Avengers.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/00/537bcb1133fd7.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/00/537bcb1133fd7.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "afeq4pooqwer",
@@ -50,14 +50,14 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "Bruce Banner was transformed into the incredibly powerful creature called the "
                     + "Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the "
                     + "stronger the Hulk gets.",
-                image: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/e/e0/537bafa34baa9.jpg"),
+                image: URL(string: "https://x.annihil.us/u/prod/marvel/i/mg/e/e0/537bafa34baa9.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "asdoxcvñjkljqwer",
                 name: "Storm",
                 description: "Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom"
                     + " have white hair, blue eyes, and the potential to wield magic.",
-                image: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/c/b0/537bc5f8a8df0.jpg"),
+                image: URL(string: "https://x.annihil.us/u/prod/marvel/i/mg/c/b0/537bc5f8a8df0.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "pñxvmn412344",
@@ -66,7 +66,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to start "
                     + "a career using his new abilities. Taught that with great power comes great "
                     + "responsibility, Spidey has vowed to use his powers to help people.",
-                image: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/6/60/538cd3628a05e.jpg"),
+                image: URL(string: "https://x.annihil.us/u/prod/marvel/i/mg/6/60/538cd3628a05e.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "asfpxcljklqwer",
@@ -74,7 +74,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                 description: "Arguably the greatest and certainly the most horrific creation of scientific genius "
                     + "Dr. Henry Pym, Ultron is a criminally insane rogue sentient robot dedicated to"
                     + " conquest and the extermination of humanity.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/537bc7f6d5d23.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/537bc7f6d5d23.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "pxcvnqwer",
@@ -86,7 +86,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "unarmed combat. He is a master planner who always thinks several steps ahead and "
                     + "will go to extreme measures to achieve his goals and protect the kingdom "
                     + "of Wakanda.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/03/537ba26276348.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/9/03/537ba26276348.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "pasdfm124kj5",
@@ -96,7 +96,7 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + " superhuman levels for most of his career. Captain America had a very high "
                     + "intelligence as well as agility, strength, speed, endurance, and reaction time "
                     + "superior to any Olympic athlete who ever competed.",
-                image: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/9/80/537ba5b368b7d.jpg"),
+                image: URL(string: "https://x.annihil.us/u/prod/marvel/i/mg/9/80/537ba5b368b7d.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "090881234",
@@ -104,14 +104,14 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                 description: "Olympic-class athlete and exceptional acrobat highly skilled in both unarmed and armed "
                     + "hand-to-hand combat and extremely accurate marksman. he is fluent in four languages "
                     + "including German and Russian.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/40/537bca868687c.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/7/40/537bca868687c.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "ovcnmweasdfñasdñrq",
                 name: "Captain Marvel",
                 description: " Ms. Marvel's current powers include flight, enhanced strength, durability and the "
                     + "ability to shoot concussive energy bursts from her hands.",
-                image: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/6/30/537ba61b764b4.jpg"),
+                image: URL(string: "https://x.annihil.us/u/prod/marvel/i/mg/6/30/537ba61b764b4.jpg"),
                 comics: [Comic]()),
             SuperHero(
                 id: "ñqwermnxcoivb",
@@ -123,12 +123,12 @@ class FakeSuperHeroesAPIClient: SuperHeroesAPIClient {
                     + "process is mentally draining, and he usually needs recovery time before he can "
                     + "repeat it. Iron Fist can heal himself of any injury or illness and project this "
                     + "power to heal others.",
-                image: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/6/60/537bb1756cd26.jpg"),
+                image: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/6/60/537bb1756cd26.jpg"),
                 comics: [Comic]())
                 ]
     }
 
-    func getAllSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
+    func getAllSuperHeroes(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         completion(Result(superHeroes))
     }
 

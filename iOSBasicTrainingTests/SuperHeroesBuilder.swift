@@ -11,7 +11,7 @@ import Foundation
 
 class SuperHeroesBuilder {
 
-    static func with(id id: String = "1",
+    static func with(id: String = "1",
                      name: String = "The Flash",
                      description: String? = nil,
                      image: NSURL? = nil,

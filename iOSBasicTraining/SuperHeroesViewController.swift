@@ -16,10 +16,10 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var errorCaseView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
-    private let superHeroesDetector = SuperHeroesDetector(
+    fileprivate let superHeroesDetector = SuperHeroesDetector(
         apiClient: FakeSuperHeroesAPIClient(),
         capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
-    private var superHeroes = [SuperHero]()
+    fileprivate var superHeroes = [SuperHero]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,64 +28,64 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
         configureNavigationBarBackButton()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadSuperHeroes()
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return superHeroes.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SuperHeroTableViewCell", forIndexPath: indexPath) as! SuperHeroTableViewCell
-        let hero = superHeroes[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SuperHeroTableViewCell", for: indexPath) as! SuperHeroTableViewCell
+        let hero = superHeroes[(indexPath as NSIndexPath).row]
         cell.configureForHero(hero)
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let superHero = superHeroes[indexPath.row]
-        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let viewController = storyBoard.instantiateViewControllerWithIdentifier("SuperHeroDetailViewController") as! SuperHeroDetailViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let superHero = superHeroes[(indexPath as NSIndexPath).row]
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "SuperHeroDetailViewController") as! SuperHeroDetailViewController
         viewController.superHero = superHero
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    private func loadSuperHeroes() {
+    fileprivate func loadSuperHeroes() {
         activityIndicatorView.startAnimating()
         superHeroesDetector.getSuperHeroes { result in
             self.activityIndicatorView.stopAnimating()
             switch result {
-            case .Success(let superHeroes):
+            case .success(let superHeroes):
                 self.showSuperHeroes(superHeroes)
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 self.showError(error)
                 break
             }
         }
     }
 
-    private func showSuperHeroes(superHeroes: [SuperHero]) {
+    fileprivate func showSuperHeroes(_ superHeroes: [SuperHero]) {
         self.superHeroes = superHeroes
         tableView.reloadData()
-        emptyCaseView.hidden = !superHeroes.isEmpty
-        errorCaseView.hidden = true
+        emptyCaseView.isHidden = !superHeroes.isEmpty
+        errorCaseView.isHidden = true
     }
 
-    private func showError(error: SuperHeroesDetectorError) {
+    fileprivate func showError(_ error: SuperHeroesDetectorError) {
         switch error {
-        case .ConnectionError:
-            emptyCaseView.hidden = true
-            errorCaseView.hidden = !superHeroes.isEmpty
+        case .connectionError:
+            emptyCaseView.isHidden = true
+            errorCaseView.isHidden = !superHeroes.isEmpty
             if superHeroes.isEmpty {
                 view.makeToast("Ups, there is no connection!")
             }
             break
         default:
             if superHeroes.isEmpty {
-                errorCaseView.hidden = true
+                errorCaseView.isHidden = true
             } else {
                 view.makeToast("Ups, unknown error detected!")
             }
@@ -93,17 +93,17 @@ class SuperHeroesViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
-    private func configureNavigationBarTitle() {
+    fileprivate func configureNavigationBarTitle() {
         title = "Super Heroes Detector"
     }
 
-    private func configureTableView() {
+    fileprivate func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
 
-    private func configureNavigationBarBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+    fileprivate func configureNavigationBarBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }

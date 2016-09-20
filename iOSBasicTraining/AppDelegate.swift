@@ -14,22 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions
-        launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
         configureNavigationBarStyle()
         return true
     }
 
-    private func configureWindow() {
+    fileprivate func configureWindow() {
         window?.backgroundColor = UIColor.windowBackgroundColor
     }
 
-    private func configureNavigationBarStyle() {
+    fileprivate func configureNavigationBarStyle() {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = UIColor.navigationBarColor
         navigationBarAppearance.tintColor = UIColor.navigationBarTitleColor
-        navigationBarAppearance.translucent = false
+        navigationBarAppearance.isTranslucent = false
         navigationBarAppearance.titleTextAttributes = [
             NSForegroundColorAttributeName : UIColor.navigationBarTitleColor
         ]

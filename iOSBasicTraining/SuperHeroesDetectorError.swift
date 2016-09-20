@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum SuperHeroesDetectorError: ErrorType {
+enum SuperHeroesDetectorError: Error {
 
-    case ConnectionError
-    case SuperHeroNotFound
+    case connectionError
+    case superHeroNotFound
 
 }

@@ -13,7 +13,7 @@ struct SuperHero {
     let id: String
     let name: String
     let description: String?
-    let image: NSURL?
+    let image: URL?
     let comics: [Comic]
 
     var formalDescription: String {
@@ -23,7 +23,7 @@ struct SuperHero {
     }
 
     func isAvenger() -> Bool {
-        return id.containsString("4")
+        return id.contains("4")
     }
 
 }

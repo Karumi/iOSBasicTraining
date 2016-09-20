@@ -14,8 +14,8 @@ import Result
 
 class SuperHeroesDetectorTests: XCTestCase {
 
-    private let storage = CapturedSuperHeroesStorage()
-    private let apiClient = MockSuperHeroesAPIClient()
+    fileprivate let storage = CapturedSuperHeroesStorage()
+    fileprivate let apiClient = MockSuperHeroesAPIClient()
 
     override func tearDown() {
         storage.clear()
@@ -76,15 +76,15 @@ class SuperHeroesDetectorTests: XCTestCase {
         expect(result?.value).toEventually(contain(apiSuperHeroes[4]))
     }
 
-    private func givenThereAreNoSuperHeroes() {
+    fileprivate func givenThereAreNoSuperHeroes() {
         givenThereAreSomeSuperHeroes(0)
     }
 
-    private func givenThereIsNoConnection() {
+    fileprivate func givenThereIsNoConnection() {
         apiClient.getSuperHeroesError = .ConnectionError
     }
 
-    private func givenThereAreSomeSuperHeroes(numberOfSuperHeroes: Int = 10) -> [SuperHero] {
+    fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10) -> [SuperHero] {
         var superHeroes = [SuperHero]()
         for i in 0..<numberOfSuperHeroes {
             let superHero = SuperHeroesBuilder.with(id: "\(i)",
@@ -96,7 +96,7 @@ class SuperHeroesDetectorTests: XCTestCase {
         return superHeroes
     }
 
-    private func givenASuperHeroesDetector() -> SuperHeroesDetector {
+    fileprivate func givenASuperHeroesDetector() -> SuperHeroesDetector {
         return SuperHeroesDetector(apiClient: apiClient, capturedSuperHeroesStorage: storage)
     }
 

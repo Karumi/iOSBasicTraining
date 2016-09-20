@@ -20,7 +20,7 @@ class SuperHeroDetailViewController: UIViewController {
     @IBOutlet weak var captureButton: UIButton!
 
     var superHero: SuperHero!
-    private let superHeroesDetector = SuperHeroesDetector(
+    fileprivate let superHeroesDetector = SuperHeroesDetector(
         apiClient: FakeSuperHeroesAPIClient(),
         capturedSuperHeroesStorage: CapturedSuperHeroesStorage())
 
@@ -33,8 +33,8 @@ class SuperHeroDetailViewController: UIViewController {
         let id = superHero.id
         let result = superHeroesDetector.captureSuperHero(id)
         switch result {
-        case .Success(_):
-            captureButton.hidden = true
+        case .success(_):
+            captureButton.isHidden = true
             view.makeToast("Evil super hero captured!")
             break
         default:
@@ -42,11 +42,11 @@ class SuperHeroDetailViewController: UIViewController {
         }
     }
 
-    private func showSuperHero() {
-        title = superHero.name.uppercaseString
+    fileprivate func showSuperHero() {
+        title = superHero.name.uppercased()
         nameLabel.text = superHero.name
         descriptionLabel.text = superHero.description
-        avengersBadgeImageView.hidden = !superHero.isAvenger()
-        photoImageView.sd_setImageWithURL(superHero.image)
+        avengersBadgeImageView.isHidden = !superHero.isAvenger()
+        photoImageView.sd_setImage(with: superHero.image as URL!)
     }
 }

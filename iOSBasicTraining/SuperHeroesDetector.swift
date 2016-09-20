@@ -11,32 +11,32 @@ import Result
 
 class SuperHeroesDetector {
 
-    private let apiClient: SuperHeroesAPIClient
-    private let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
+    fileprivate let apiClient: SuperHeroesAPIClient
+    fileprivate let capturedSuperHeroesStorage: CapturedSuperHeroesStorage
 
     init(apiClient: SuperHeroesAPIClient, capturedSuperHeroesStorage: CapturedSuperHeroesStorage) {
         self.apiClient = apiClient
         self.capturedSuperHeroesStorage = capturedSuperHeroesStorage
     }
 
-    func getSuperHeroes(completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
+    func getSuperHeroes(_ completion: (Result<[SuperHero], SuperHeroesDetectorError>) -> Void) {
         return apiClient.getAllSuperHeroes { result in
             switch result {
-            case .Success(let superHeroes):
+            case .success(let superHeroes):
                 let nonCapturedSuperHeroes = superHeroes.filter {
                     !self.capturedSuperHeroesStorage.isSuperHeroCaptured($0.id)
                 }
                 completion(Result(nonCapturedSuperHeroes))
                 break
-            case .Failure(let apiClientError):
+            case .failure(let apiClientError):
                 completion(Result(error: apiClientError))
             }
         }
     }
 
-    func captureSuperHero(id: String) -> Result<String, SuperHeroesDetectorError> {
+    func captureSuperHero(_ id: String) -> Result<String, SuperHeroesDetectorError> {
         guard !id.isEmpty else {
-            return Result(error: SuperHeroesDetectorError.SuperHeroNotFound)
+            return Result(error: SuperHeroesDetectorError.superHeroNotFound)
         }
         capturedSuperHeroesStorage.markSuperHeroAsCaptured(id)
         return Result(id)

@@ -8,7 +8,7 @@ target 'iOSBasicTraining' do
   target 'iOSBasicTrainingTests' do
     inherit! :search_paths
 
-    pod 'Nimble'
+	pod 'Nimble', git: 'https://github.com/Quick/Nimble.git'
 
   end
 

@@ -1,23 +1,32 @@
 PODS:
-  - Nimble (4.1.0)
-  - Result (2.1.0)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - Nimble (5.0.0)
+  - Result (3.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - Toast (3.0)
 
 DEPENDENCIES:
-  - Nimble
+  - Nimble (from `https://github.com/Quick/Nimble.git`)
   - Result
   - SDWebImage
   - Toast
 
+EXTERNAL SOURCES:
+  Nimble:
+    :git: https://github.com/Quick/Nimble.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 0209419661b6acceff45cd63984596f2e9eea517
+    :git: https://github.com/Quick/Nimble.git
+
 SPEC CHECKSUMS:
-  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
-  Result: d7f09a21f10428bb8d23a74c48999b591692c559
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: f78f0302219ea48fdbf573e178ca3159330358c9
+PODFILE CHECKSUM: 87fa0e66e2a4ed95d9152062c40bf5d0e3c85b50
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.2
