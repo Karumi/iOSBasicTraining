@@ -20,7 +20,7 @@ class SuperHeroesDetectorServiceLocator {
     }
 
     static func provideSuperHeroDetailViewController(superHero: SuperHero) -> UIViewController {
-        let viewController = provideUIViewControllerWithName("SuperHeroDetailViewController") as! SuperHeroDetailViewController
+        let viewController = provideUIViewControllerWithName("SuperHeroesDetailViewController") as! SuperHeroDetailViewController
         let captureSuperHero = provideCaptureSuperHeroUseCase()
         viewController.presenter = SuperHeroDetailPresenter(view: viewController,
                                                             captureSuperHero: captureSuperHero,
